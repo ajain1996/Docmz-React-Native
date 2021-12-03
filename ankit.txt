@@ -1,0 +1,10 @@
+Pranav Patwardhan15:31
+Write a program to find second highest number:
+I/P
+
+const arr=[5,9,6,8,4,3,9,6,5,7,1,3];
+https://jsfiddle.net/
+Pranav Patwardhan15:45
+Create a React Native component which will have a progress bar. It will increment after 10 secs. The progress bar will keep on incrementing till the width of the page is met and then it will stop incrementing. online editor - https://codesandbox.io/s/react-native-q4qymyp2l6
+Pranav Patwardhan15:47
+pranav.patwardhan@neosofttech.com

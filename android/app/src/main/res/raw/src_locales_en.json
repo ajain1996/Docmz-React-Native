@@ -1,0 +1,576 @@
+{
+  "doctor": {
+    "dashboard": {
+      "my_dashboard": "My Dashboard",
+      "revenue": "Revenue",
+      "approx_revenue": "Approx. revenue",
+      "upcoming_appointments": "Upcoming Appointments",
+      "no_appointments": "No Appointments",
+      "recent_patients": "Recent Patients",
+      "no_patient_found": "No patient found"
+    },
+    "appointments": {
+      "my_appointments": "My Appointments",
+      "search_by_name": "Search by name",
+      "search_by_name_disease": "Search by name, disease or location",
+      "search_for_an_appointment": "search for an appointment",
+      "upcoming": "Upcoming",
+      "history": "History",
+      "no_appointments": "No Appointments",
+      "to": "to",
+      "confirm": "CONFIRM",
+      "cancel": "CANCEL",
+      "pay_confirm": "Do you wish to pay and confirm the appointment?"
+    },
+    "patients_list": {
+      "patients_list": "Recent Patients",
+      "no_patient_found": "No patient found",
+      "last_visit": "Last Visit",
+      "add_new": "Add New",
+      "add_patient": "Add Patient"
+    },
+
+    "patient_details": {
+      "patient_details": "Patient Details",
+      "reason_for_visit": "Reason for visit",
+      "appointments": "Appointments",
+      "medical_history": "Medical History"
+    },
+
+    "waiting": {
+      "online": "online",
+      "waiting_room": "Waiting Room",
+      "offlie": "offline",
+      "to_pay": "TO PAY",
+      "accept": "Accept",
+      "cancel": "Cancel",
+      "reason_visit": "Reason for visit",
+      "last_visit": "Last Visit",
+      "no_of_patient": "No. of patients in waiting room",
+      "next_in_line": "Next in line",
+      "no_app_found": "No appointment found",
+      "appointment_with": "appointment with"
+    },
+
+    "template": {
+      "no_temp_added": "No Template Added",
+      "add_temp": "Add Template",
+      "med": "Medicine",
+      "rep": "Reports",
+      "con": "Condition",
+      "rep_name": "Report Name",
+      "rep_type": "Report Type",
+      "update": "UPDATE"
+    },
+
+    "medical_history": {
+      "weight": "Weight",
+      "recorded_on": "Recorded on",
+      "height": "Height",
+      "blood_pressure": "Blood Pressure",
+      "heart_rate": "Heart Rate",
+      "temperature": "Temperature",
+      "glucose": "Glucose",
+      "enter_your_bp": "Enter your Blood Pressure",
+      "search_symptoms": "Search your symptoms",
+
+      "to": "to",
+      "no_medicine_added": "No medicine added",
+      "add_medications": "Add Medications",
+      "no_record_added": "No records added",
+      "added_by": "Added By",
+
+      "download_report": "Download Report",
+      "upload_report": "Upload Report",
+      "select_report_file": "Select Report file",
+
+      "no_surgeries_found": "No surguries found",
+      "add_surgeries": "Add Suguries",
+      "date": "Date",
+      "calendar": "calendar",
+      "ot": "OT",
+      "surgeon": "Surgeon",
+      "status": "Status",
+
+      "no_allergies_found": "No allergies found",
+      "add_allergies": "Add Allergies",
+      "severity": "Severity",
+      "reaction": "Reaction",
+      "add_height": "Add Height",
+      "add_your_height": "Add your Height",
+      "add_weight": "Add Weight",
+      "fat_mass": "Fat Mass",
+
+      "record_temperature": "Record Temperature",
+      "record_your_temp": "Record your Temprature",
+      "centigrade": "Centigrade",
+      "fahrenheit": "Fahrenheit",
+      "pulse": "Pulse",
+
+      "add_blood_pressure": "Add Blood Pressure",
+      "systolic": "Systolic",
+      "diastolic": "Diastolic",
+      "add_surgery_details": "Add Surgery Details",
+      "add_heart_rate": "Add Heart Rate",
+      "add_pills": "Add Pills",
+      "time": "Time",
+      "allergy_name_type": "Allergy Name/Type",
+      "course_description": "Course Description",
+      "search_medicine": "Search Medicine",
+      "name_of_the_pill": "Name of the pill",
+      "amount_to_be_taken": "Amount to be taken",
+      "course_duration": "Course Duration",
+      "cancel": "CANCEL",
+      "add_a_record": "Add a Record"
+    },
+
+    "AddAppoitments": {},
+    "AddQuestionnaire": {
+      "AddCategory": {
+        "categories": "Categories",
+        "add_category": "Add Category",
+        "category_name": "Category Name",
+        "title": "Title",
+        "name_of_category": "Name of the Category",
+        "question_type": "Question Type",
+        "type_your_question": "Type your question",
+        "submit": "Submit",
+        "any_sub_question": "Any Sub Questions?",
+        "no_questions": "No Question, add one now!",
+        "add_option": "Add Option",
+        "update": "Update",
+        "delete": "Delete",
+        "add_question": "Add Question",
+        "reset": "Reset",
+        "next": "Next",
+        "no_question_asked": "No Questions has been added by the doctor.",
+        "you_can_skip": "You can Skip Question"
+      },
+      "Categories": {
+        "categories": "Categories",
+        "vitals": "VITALS",
+        "each_criteria_can_be_edited_and_modified": "Each criteria can be edited and modified.",
+        "view": "View",
+        "add_category": "ADD CATEGORY"
+      }
+    },
+    "Chats": {
+      "search": "search",
+      "convers": "Conversations",
+      "search_chat": "Search Chat...",
+      "type_a_message": "Type a message...",
+      "chat": "Chat",
+      "add_pres": "Add Prescription",
+      "refer": "Refer"
+    },
+    "DoctorDetail": {},
+    "FindDoctor": {
+      "now": "NOW",
+      "search_your_patient": "seach your patient",
+      "available_doctors": "Available Doctors"
+    },
+    "home": {
+      "appointments": "Appointments",
+      "hello": "Hello",
+      "you_have": "You have"
+    },
+    "Languages": {
+      "region_and_lang": "Region and Language",
+      "region": "Region",
+      "language": "Language"
+    },
+    "PatientDetails": {
+      "patient_details": "Patient Details",
+      "medical_history": "Medical History",
+      "reports": "Reports",
+      "appointments": "Appointments",
+      "notes": "Notes",
+      "save_changes": "SAVE CHANGES"
+    },
+    "Patients": {
+      "patients": "Patients",
+      "last_visit": "Last Visit"
+    },
+    "Profile": {
+      "pers_info": "Personal Information",
+      "upload": "Upload",
+      "email": "Email",
+      "fees": "Fees",
+      "phone": "Phone",
+      "about_you": "About you",
+      "registration_no": "Registration Number",
+      "registration_council": "Registration Council",
+      "registration_year": "Registration Year",
+      "url": "Url",
+      "year": "Year",
+      "yes": "Yes",
+      "no": "No",
+      "upload_sign": "Upload Signature",
+      "appointments": "Appointments",
+      "questionaire": "Questionaire",
+      "logout": "Logout"
+    },
+    "Referrals": {
+      "refer_a_friend": "Refer a Friend",
+      "rewards": "Rewards",
+      "refer_friends.": "Refer friends.",
+      "unlock_rewards": "Unlock rewards"
+    },
+    "Settings": {
+      "settings": "Settings",
+      "notification": "Notification",
+      "sms_notification": "SMS Notification",
+      "mobile_notification": "Mobile Notification",
+      "email_notification": "Email Notification",
+      "account": "Account",
+      "old_pass": "Old Password",
+      "new_pass": "New Password",
+      "con_pass": "Confirm Password",
+      "on": "ON",
+      "off": "OFF",
+      "edit_your_profile": "Edit your profile",
+      "signout": "Signout",
+      "doctor_on_demand": "Doctor on demand",
+      "block": "Block",
+      "logout": "Logout",
+      "update_profile_picture": "Update Profile Picture",
+      "gallery": "Gallery",
+      "camera": "Camera",
+      "remove_photo": "Remove Photo",
+      "update_profile_details": "Update Profile Details",
+      "submit": "SUBMIT",
+      "my_appointments": "My Appointments",
+      "questionnaire": "Questionnaire",
+      "clinics": "Clinics",
+      "template": "Template",
+      "my_staff": "My Staff",
+      "availability": "Availability",
+      "payment": "Payment",
+      "my_teams": "My Teams",
+      "profile": "Profile",
+      "skin": "Skin"
+    },
+
+    "clinics": {
+      "no_clinics_found": "No Clinic Found"
+    },
+    "Skins": {
+      "primary": "Primary",
+      "dark": "Dark",
+      "mini": "Mini"
+    },
+    "profile": {
+      "profile": "Profile",
+      "name": "Name",
+      "age": "Age",
+      "gender": "Gender",
+      "bio": "Bio",
+      "education_qualifications": "Education Qualifications",
+      "registration_details": "Registration Details",
+      "payment": "Payment",
+      "view_policy": "View Policy",
+      "country_wise_fee": "Add country wise consultation fee",
+      "practice": "Practice",
+      "follow_ups": "Follow Ups",
+      "strict": "Strict",
+      "moderate": "Moderate",
+      "flexible": "Flexible"
+    },
+
+    "view_policy": {
+      "cancellation_policy": "Cancellation Policy",
+      "flexible_para": "Full refund if cancellation is within 6 hours of booking For a full refund of Consultation fees,cancellation must be made 6 hours prior to Appointment time.If the patient cancels less than 6 hours in advance 60% of the Consultation fees [as amount or % amount] will be refunded.",
+      "moderate_para": "Full refund if cancellation is within 24 hours of booking(1 days) For a full refund of Consultation fees, cancellation must be made 1 days prior to Appointment time. For example, if Appointment  is on Friday, cancel by the Tuesday before Appointment time. If the patient cancels less than a days in advance 60% of the Consultation fees [as amount or % amount] will be refunded.",
+      "strict_para": "Full refund if cancellation is within 72 hours of booking(3 days) For a 50% refund of Consultation fees, cancellation must be made 5 full days prior to Appointment time, otherwise no refund. If the patient cancels less than 5 days in advance 60% of the Consultation fees [as amount or % amount]  of the Consultation fees will be refunded."
+    },
+
+    "my_staff": {
+      "invite_email": "Invite via Email",
+      "invite_doctor": "Invite Doctors",
+      "permissions": "Permissions",
+      "my_appointments": "My Appointments",
+      "questionnaire": "Questionnaire",
+      "clinics": "Clinics",
+      "availiblity": "Availiblity",
+      "my_staff": "My Staff",
+      "payment": "Payment",
+      "my_teams": "My Teams",
+      "skin": "Skin",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "add_doctor": "Add Doctor",
+      "doctor_name": "Doctor's name",
+      "doctor_not_available": "Concerned Doctor not available?",
+      "invite_to_join_docplus": "Invite them to join DocPlus"
+    },
+    "my_teams": {
+      "my_teams": "My Teams",
+      "teams": "Teams",
+      "team_name": "Team Name",
+      "requests": "Requests",
+      "no_pending_requests": "No pending requests",
+      "no_teams_found": "No teams found",
+      "add_team_details": "Add Team Details",
+      "update": "UPDATE"
+    },
+    "payment": {
+      "payment": "Payment",
+      "payment_option": "Select payment option",
+      "add_bank_details": "Add bank details",
+      "payment_after_consult": "Payment after consultation",
+      "payment_before_consult": "Payment before consultation",
+      "danate_time": "Donate Time"
+    },
+
+    "availablity": {
+      "availability": "Availability",
+      "tele_consult": "Tele-consult",
+      "in_person": "In-person",
+      "appointment_duration": "Appointment Duration",
+      "choose_any_day": "Choose any day to the week to repeat this availabilty",
+      "working_hours": "Working Hours",
+      "start_time": "Start Time",
+      "end_time": "End TIme",
+      "break_hours": "Break Hours",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesdayy": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+
+  "patient": {
+    "appointmentForm": {},
+    "appointments": {
+      "appointment": "Appointment",
+      "add_notes": "Add notes for the doctor",
+      "contact_number": "Contact Number",
+      "reason_for_visit": "Reason for visit"
+    },
+    "consultations": {
+      "consult": "Consult"
+    },
+    "doc_profile": {
+      "doc_plus": "DocPlus",
+      "permission_msg": "This App needs access to your location ",
+      "doctor_profile": "Doctor's Profile",
+      "reviews": "Reviews",
+      "review": "Review",
+      "patients": "Patients",
+      "patient": "Patient",
+      "experience": "Experience",
+      "about": "About",
+      "fee": "Fee",
+      "feedback": "Feedback",
+      "book_appointment": "BOOK APPOINTMENT",
+      "consultation_fees": "consultation fees",
+      "exp_question": "How was your experience?",
+      "add_feedback": "Add Feedback",
+      "feedbacks": "Feedbacks",
+      "tell_us_liked": "Tell us what you liked...",
+      "book": "Book",
+      "doc_not_avail": "Doctor is not available for selected Dates"
+    },
+
+    "appointment_summary": {
+      "appointment_summary": "Appointment Summary",
+      "patient_details": "Patient Details",
+      "consultation_fee": "Consultation Fee",
+      "notes": "Notes",
+      "answers": "Answers",
+      "reason": "Reason",
+      "add_notes": "Add notes for the doctor"
+    },
+    "familyMember": {
+      "family_member": "Family Member",
+      "no_member_found": "No member found",
+      "add_member": "Add Member",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "gender": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "transgender": "Transgender",
+      "date_of_birth": "Date Of Birth",
+      "contact_number": "Contact Number",
+      "relationship": "Relationship",
+      "cancel": "Cancel",
+      "add": "Add"
+    },
+    "home": {
+      "find_a_doctor": "Find a Doctor",
+      "now": "NOW",
+      "schedule": "SCHEDULE",
+      "search_your_patient": "search your patient",
+      "available_doctors": "Available Doctors",
+      "empty": "Empty",
+      "empty_superDocs": "Empty superDocs"
+    },
+    "medicalrecords": {
+      "hello": "Hello",
+      "medical_history": "Medical History",
+      "add_a_new_medication": "Add a new medication",
+      "save": "Save",
+      "search_medicine": "Search Medicine",
+      "dose_appearance": "Dose Appearance",
+      "colors": "Colors",
+      "take_as_per_needed": "Take as per needed",
+      "schedule": "Schedule",
+      "start_date": "Start Date",
+      "select_start_date": "Select Start Date",
+      "end_date": "End Date",
+      "reminders_&_Dosage": "Reminders & Dosage"
+    },
+    "more": {
+      "help": {},
+      "settings": {}
+    },
+    "my_profile": {
+      "my_profile": "My Profile",
+      "medical_history": "Medical History",
+      "my_family": "My Family",
+      "my_healthcare_team": "My Healthcare Team",
+      "my_appointments": "My Appointments",
+      "my_transactions": "My Transactions",
+      "refferal": "Refferal",
+      "settings": "Settings",
+      "logout": "Logout",
+      "update_profile_picture": "Update Profile Picture",
+      "gallery": "Gallery",
+      "camera": "Camera",
+      "remove_photo": "Remove Photo",
+      "update_profile_details": "Update Profile Details",
+      "submit": "SUBMIT"
+    },
+    "medical_history": {
+      "medical_history": "Medical History",
+      "recorded_on": "Recorded on",
+      "modified_by": "Modified By",
+      "systolic": "Systolic",
+      "diastolic": "Diastolic",
+      "blood_sugar": "BloodSugar",
+      "name_of_report": "Name of Report",
+      "type_of_test": "Type of Test",
+      "surgery_type": "Surgery Type",
+      "surgion_name": "Surgion's Name",
+      "ot_or": "OT/OR",
+      "select_date": "Select Date"
+    },
+    "medical_logs": {
+      "medical_logs": "Medical Logs",
+      "no_log_found": "No Medical Logs found"
+    },
+    "my_family": {
+      "my_family": "My Family",
+      "no_family_member_added": "No Family member found",
+      "add_member": "Add Member",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "relationship": "Relationship",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "contact": "Contact Number",
+      "select_gender": "Select Gender",
+      "male": "Male",
+      "female": "Female",
+      "transgender": "Transgender",
+      "medical_history": "Medical History",
+      "date_of_birth": "Date Of Birth",
+      "cancel": "Cancel",
+      "add": "Add",
+      "update": "UPDATE"
+    },
+    "my_doctors": {
+      "my_doctors": "My Doctors",
+      "no_doctors": "No Doctors"
+    },
+
+    "transactions": {
+      "payment": "Payment",
+      "pay": "Pay",
+      "transactions": "Transactions",
+      "to": "to",
+      "no_transactions": "No transactions",
+      "latest_first": "Latest first",
+      "high_to_low": "High to low",
+      "reset": "Reset",
+      "cancel": "Cancel"
+    },
+
+    "refferal": {
+      "refferal": "Refferal",
+      "invite_friends": "Invite Friends. Get free plus",
+      "reward": "Get one week of free plus for every friend who joins DocPlus",
+      "invite": "Invite"
+    },
+
+    "settings": {
+      "docplus": "DocPlus",
+      "continue_as": "Continue as",
+      "select_name": "Select Name",
+      "language": "Language",
+      "continue": "CONTINUE"
+    },
+
+    "landing_page": {
+      "search_by_symptom": "Search by conditions, symptoms, location...",
+      "press_again_to_exit": "Press again to Exit",
+      "search_for_doctor": "Search for doctor",
+      "all_doctors": "All Doctors",
+      "female_doctors": "Female Doctors",
+      "male_doctors": "Male Doctors",
+      "favorites": "Favorites",
+      "sort_by_name": "Sort by name",
+      "cancel": "Cancel",
+      "no_doctor_found": "No doctor found",
+      "more": "More",
+      "now": "Now",
+      "schedule": "Schedule",
+      "exit_toast": "Press again to Exit",
+      "welcome": "Welcome",
+      "welcome_back": "Welcome Back!",
+      "choose_account_type": "Choose your account type"
+    },
+
+    "signup": {
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "register_as_staff": "Register as a staff member?",
+      "already_have_accound": "Already have an account?",
+      "sign_in": "Sign In",
+      "sign_up": "Sign Up",
+      "sign_in_caps": "SIGN IN",
+      "signup_with": "Sign up with",
+      "next": "Next",
+      "submit": "SUBMIT",
+      "hey_there": "Hey There!",
+      "sign_up_as_doctor": "Signup as doctor",
+      "step1": "Step 1",
+      "phone_no": "Phone Number"
+    },
+
+    "login": {
+      "login_as_doctor": "Login as doctor",
+      "login_as_patient": "Login as patient",
+      "email_or_phone": "Email/Phone No.",
+      "forgot_password": "Forgot Password?",
+      "login": "Login",
+      "login_with": "Login with",
+      "login_with_otp": "Login With OTP!",
+      "change_pass": "Change Password!",
+      "or": "or",
+      "login_caps": "LOGIN",
+      "pass": "Password",
+      "send_otp": "Send OTP",
+      "dont_have_acc": "Don't have an account?",
+      "login_otp": "Login with OTP instead of Password?"
+    }
+  }
+}
