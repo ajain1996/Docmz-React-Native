@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     searchInput: {
         backgroundColor: Colors.WHITE, height: 50,
         color: "white", width: "100%", paddingLeft: 24,
-        borderRadius: 10,
+        borderRadius: 10, fontFamily: 'Montserrat-Regular',
     },
     searchContainer: {
         flexDirection: 'row', alignItems: 'center', marginTop: 10,

@@ -14,7 +14,7 @@ export default function DoctorHome() {
     const navigation = useNavigation();
     return (
         <>
-            <ScrollView style={{ backgroundColor: 'white', paddingTop: 10 }}>
+            <ScrollView style={{ backgroundColor: 'white', paddingTop: 10, paddingBottom: 70 }}>
                 <DoctorHeader showIcon={false} text="Doctor's for 'Bad Stomach'" />
                 <View style={{ paddingHorizontal: 16 }}>
                     <DoctorSearch onPress={() => { navigation.navigate("DoctorSearchScreen") }} />
@@ -40,10 +40,12 @@ export default function DoctorHome() {
                         backgroundShadow={"#fff"} activeOpacity={0.5} backgroundDarker="#fff"
                         onPress={() => { navigation.navigate("DoctorProfileScreen") }}
                     >
-                        <Text style={{ fontSize: 18, color: 'white' }}>Book Appointment</Text>
+                        <Text style={{ fontSize: 18, color: 'white', fontFamily: 'Montserrat-Regular', }}>
+                            Book Appointment
+                        </Text>
                     </AwesomeButton>
                 </View>
-                <Text />
+                <View style={{ height: 64 }} />
             </ScrollView>
 
         </>
@@ -57,7 +59,9 @@ const BuildCardButtonComponent = ({ image, text }) => {
                 source={image}
                 style={{ width: 18, height: 18, tintColor: '#3387d2' }}
             />
-            <Text style={{ fontSize: 12, color: 'black', marginLeft: 4 }}>{text}</Text>
+            <Text style={{ fontSize: 12, color: 'black', marginLeft: 4, fontFamily: 'Montserrat-Regular', }}>
+                {text}
+            </Text>
         </TouchableOpacity>
     );
 }
@@ -114,8 +118,9 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                             text={"Ahmedabad, IN"}
                         />
                     </View>
+                    <View style={{ height: 8 }} />
 
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 6 }}>
+                    <View style={{ flexDirection: 'row', alignItems: "flex-start", width: "80%" }}>
                         <Image
                             source={require('../../../assets/globe.png')}
                             style={{
@@ -127,9 +132,10 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                             text={"Speaks: "} fs={13} fw={"bold"} textColor={Colors.BLACK}
                         />
                         <CustomTextComponent
-                            text={desc} fs={13} fw={"normal"} textColor={"silver"}
+                            text={desc} fs={12.5} fw={"normal"} textColor={"silver"}
                         />
                     </View>
+                    <View style={{ height: 5 }} />
                 </View>
             </View>
             <View style={{ alignItems: 'center' }}>
@@ -142,12 +148,19 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                 flexDirection: 'row', justifyContent: 'space-between',
                 alignItems: 'center', marginTop: 8, paddingHorizontal: 20,
             }}>
-                <Text style={{ fontSize: 26, color: 'black', fontWeight: '600' }}>₹ 700</Text>
-                <AwesomeButton width={160} height={50} borderRadius={100} backgroundColor={Colors.BLUE2}
+                <CustomTextComponent
+                    text="₹ 700" fs={22} fw="600"
+                    textColor={"black"}
+                />
+                <AwesomeButton width={180} height={48} borderRadius={100} backgroundColor={Colors.BLUE2}
                     backgroundShadow={"#368edd"} activeOpacity={0.5} backgroundDarker={"#3d7fba"}
                     onPress={() => { navigation.navigate("DoctorProfileScreen") }}
                 >
-                    <Text style={{ fontSize: 16, color: 'white', marginLeft: 4 }}>Book Appointment</Text>
+                    <Text style={{
+                        fontSize: 15, color: 'white', marginLeft: 4, fontFamily: 'Montserrat-Regular',
+                    }}>
+                        Book Appointment
+                    </Text>
                 </AwesomeButton>
             </View>
         </Card>

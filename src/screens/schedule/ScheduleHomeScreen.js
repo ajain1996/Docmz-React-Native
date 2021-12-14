@@ -4,6 +4,7 @@ import { Colors } from '../../utils/Colors';
 import SelectScheduleCalendar from './SelectScheduleCalendar';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import SelectScheduleScreen from './SelectScheduleScreen';
+import CustomTextComponent from '../../components/CustomTextComponent';
 
 export default function ScheduleHomeScreen({ navigation }) {
 
@@ -22,7 +23,10 @@ export default function ScheduleHomeScreen({ navigation }) {
                     justifyContent: 'center', alignItems: 'center',
                     borderTopLeftRadius: 50, borderBottomLeftRadius: 50,
                 }} onPress={() => { setTabValue("TeleConsule") }}>
-                    <Text style={{ color: '#000' }}>TeleConsule</Text>
+                    <CustomTextComponent
+                        text={`TeleConsule`} fs={14}
+                        textColor={tabValue === "TeleConsule" ? "#fff" : "#000"}
+                    />
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{
@@ -31,7 +35,10 @@ export default function ScheduleHomeScreen({ navigation }) {
                     justifyContent: 'center', alignItems: 'center',
                     borderTopRightRadius: 50, borderBottomRightRadius: 50,
                 }} onPress={() => { setTabValue("InPerson") }}>
-                    <Text style={{ color: '#000' }}>In Person</Text>
+                    <CustomTextComponent
+                        text={`In Person`} fs={14}
+                        textColor={tabValue === "InPerson" ? "#fff" : "#000"}
+                    />
                 </TouchableOpacity>
             </View>
 

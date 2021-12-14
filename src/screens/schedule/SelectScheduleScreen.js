@@ -7,6 +7,7 @@ import SearchComponent from '../../components/SearchComponent';
 import { availableTimeSlots, dummyDaysData, listOfPatients } from '../../constants/dummyData';
 import { Colors } from '../../utils/Colors';
 import { windowHeight, windowWidth } from '../../utils/utils';
+import CustomTextComponent from '../../components/CustomTextComponent';
 
 export default function SelectScheduleScreen({ navigation }) {
 
@@ -78,7 +79,7 @@ export default function SelectScheduleScreen({ navigation }) {
                                 >
                                     <Text style={{
                                         color: day === item.time ? Colors.WHITE : Colors.GREEN,
-                                        marginTop: 4,
+                                        marginTop: 4, fontFamily: 'Montserrat-Regular',
                                     }}>
                                         {item.time}
                                     </Text>
@@ -94,7 +95,10 @@ export default function SelectScheduleScreen({ navigation }) {
                                 setSelectedValue={setSelectedValue}
                             />
                             <View style={{ height: 16 }} />
-                            <Text style={{ fontSize: 15, color: '#000', fontWeight: '600', marginVertical: 10 }}>
+                            <Text style={{
+                                fontSize: 15, fontWeight: '600', marginVertical: 10,
+                                fontFamily: 'Montserrat-Regular', color: '#000',
+                            }}>
                                 Write your problem
                             </Text>
                             <Card style={styles.inputCardStyle}>
@@ -113,9 +117,9 @@ export default function SelectScheduleScreen({ navigation }) {
                                     activeOpacity={0.5} backgroundDarker={"#3d7fba"}
                                     onPress={() => { }} raiseLevel={2.5}
                                 >
-                                    <Text style={{ fontSize: 16, color: "white" }}>
-                                        Book Appointment
-                                    </Text>
+                                    <CustomTextComponent
+                                        text={"Book Appointment"} fs={16} fw={"normal"} textColor={"#fff"}
+                                    />
                                 </AwesomeButton>
                             </View>
                         </View>
@@ -141,12 +145,14 @@ const BuildDaysCardComponent = ({ data, index, day, setDay }) => {
             >
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={[styles.daysCardNumberStyle, {
-                        color: day === data.name ? Colors.WHITE : Colors.GREEN
+                        color: day === data.name ? Colors.WHITE : Colors.GREEN,
+                        fontFamily: 'Montserrat-Regular',
                     }]}>
                         {data.id}
                     </Text>
                     <Text style={[styles.daysCardTextStyle, {
-                        color: day === data.name ? Colors.WHITE : Colors.GREEN
+                        color: day === data.name ? Colors.WHITE : Colors.GREEN,
+                        fontFamily: 'Montserrat-Regular',
                     }]}>
                         {data.name}
                     </Text>
@@ -159,7 +165,10 @@ const BuildDaysCardComponent = ({ data, index, day, setDay }) => {
 
 const BuildTitleComponent = ({ title, color }) => {
     return (
-        <Text style={{ color: color ? color : Colors.BLACK, fontSize: 20, fontWeight: '600' }}>
+        <Text style={{
+            color: color ? color : Colors.BLACK, fontSize: 20,
+            fontFamily: 'Montserrat-Regular', fontWeight: '600',
+        }}>
             {title}
         </Text>
     );
@@ -169,19 +178,26 @@ const BuildTitleComponent = ({ title, color }) => {
 const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
     return (
         <>
-            <Text style={{ fontSize: 15, color: '#000', fontWeight: '600', marginVertical: 10 }}>Patient</Text>
+            <Text style={{
+                fontSize: 15, color: '#000', fontWeight: '600',
+                fontFamily: 'Montserrat-Regular', marginVertical: 10,
+            }}>
+                Patient
+            </Text>
             <View style={{
-                backgroundColor: '#fff', elevation: 4, shadowColor: "#999", width: "100%",
-                borderRadius: 8,
+                backgroundColor: '#fff', shadowColor: "#999",
+                borderRadius: 8, width: "100%", elevation: 4,
             }}>
                 <Picker
                     selectedValue={selectedValue}
                     mode="modal"
                     style={{
                         color: selectedValue === undefined || selectedValue.length === 0 ? "#999" : '#000',
-                        marginLeft: 10
+                        marginLeft: 10, fontFamily: 'Montserrat-Regular',
                     }}
-                    barStyle={{ color: 'white' }}
+                    itemStyle={{
+                        fontFamily: 'Montserrat-Regular',
+                    }}
                     dropdownIconColor={"white"}
                     onValueChange={(itemValue, itemIndex) => {
                         console.log("\n\n \n\n \n\n dfsdefgekfbnekfbekjbgekbgenhjb => ")
@@ -189,15 +205,33 @@ const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
                         setSelectedValue(itemValue)
                     }}
                 >
-                    <Picker.Item label="Select patient details" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 1" value="v1" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 2" value="v2" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 3" value="v3" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 4" value="v4" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 5" value="v5" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 6" value="v6" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 7" value="v7" style={{ fontSize: 14 }} />
-                    <Picker.Item label="Value 8" value="v8" style={{ fontSize: 14 }} />
+                    <Picker.Item label="Select patient details" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 1" value="v1" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 2" value="v2" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 3" value="v3" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 4" value="v4" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 5" value="v5" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 6" value="v6" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 7" value="v7" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
+                    <Picker.Item label="Value 8" value="v8" style={{
+                        fontSize: 14, marginLeft: 8
+                    }} fontFamily='Montserrat-Regular' />
                 </Picker>
                 {/* <Image
                     source={require("../../../assets/arrow-down.png")}
@@ -236,7 +270,7 @@ const styles = StyleSheet.create({
         width: '100%', height: 190,
         paddingHorizontal: 18, color: "black",
         borderRadius: 10, paddingBottom: 16,
-        marginTop: -70
+        marginTop: -70, fontFamily: 'Montserrat-Regular',
     }
 });
 

@@ -124,12 +124,6 @@ export default function DoctorProfileScreen() {
                         text={"No Slots"} fs={20} fw={"normal"} textColor={Colors.BLACK90}
                     />
                 </View> : <></>}
-
-                {/* <TouchableOpacity activeOpacity={0.5} style={{
-                    justifyContent: 'center', alignItems: "center", marginVertical: 28
-                }}>
-                    <Text style={{ color: Colors.BLUE2, fontSize: 18 }}>View All Slots</Text>
-                </TouchableOpacity> */}
                 <Text />
             </Card>
             <Text />
@@ -222,7 +216,9 @@ export default function DoctorProfileScreen() {
                     shadowColor: "#999999", shadowOpacity: 0.1, elevation: 9,
                     shadowRadius: 2, shadowOffset: { height: 2, width: 0 },
                 }}>
-                    <Text style={{ fontSize: 18, color: 'white' }}>Book Appointment</Text>
+                    <CustomTextComponent
+                        text="Book Appointment" fs={18} textColor={"#fff"}
+                    />
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -248,16 +244,18 @@ const BuildFifthComponent = () => {
                             style={{ width: 15, height: 15, tintColor: Colors.BLUE }}
                         />
                     </View>
-                    <Text style={{ color: "black", marginLeft: 4 }}>
+                    <Text style={{ color: "black", marginLeft: 4, fontFamily: 'Montserrat-Regular', }}>
                         In-Clinic Appointment
                     </Text>
+                    <View style={{ width: 10 }} />
                     <View style={{ flexDirection: 'column', alignItems: 'flex-end' }}>
-                        <Text style={{ color: Colors.LIGHTGRAY, fontWeight: '300' }}>
-                            Fees: $ 80.70
-                        </Text>
-                        <Text style={{ color: Colors.LIGHTGRAY, fontWeight: '300' }}>
-                            ₹ 1400
-                        </Text>
+                        <CustomTextComponent
+                            text={"Fees: $ 80.70"} fs={13} fw={"300"} textColor={Colors.LIGHTGRAY}
+                        />
+
+                        <CustomTextComponent
+                            text={"₹ 1400"} fs={13} fw={"300"} textColor={Colors.LIGHTGRAY}
+                        />
                     </View>
                 </View>
             </Card>

@@ -13,6 +13,7 @@ export default function CustomTextComponent({ text, fs, fw, textColor, textAign,
         <Text style={{
             fontSize: fsn, fontWeight: fw, color: textColor,
             textAlign: textAign, lineHeight: lineHeight,
+            fontFamily: 'Montserrat-Regular',
         }}>
             {text}
         </Text>

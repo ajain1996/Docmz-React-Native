@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, SafeAreaView, FlatList, StatusBar, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 import CustomButton from '../../components/CustomButton';
+import CustomTextComponent from '../../components/CustomTextComponent';
 import HeaderComponent from '../../components/HeaderComponent';
 import { dummyData } from '../../constants/dummyData';
 import { Colors } from '../../utils/Colors';
@@ -44,7 +45,10 @@ export default function DoctorSearchScreen2({ navigation }) {
                             borderTopWidth: 8, borderColor: "#eee"
                         }}>
                             <View style={{ paddingTop: 10, alignItems: 'center', paddingBottom: 16 }}>
-                                <Text style={{ fontSize: 18, color: '#000' }}>Not able to find your doctor?</Text>
+                                <CustomTextComponent
+                                    text={`Not able to find your doctor?`}
+                                    fs={18} textColor={"#000"}
+                                />
                                 <View style={{ height: 16 }} />
                                 <CustomButton
                                     text="Call Now" fs={15}

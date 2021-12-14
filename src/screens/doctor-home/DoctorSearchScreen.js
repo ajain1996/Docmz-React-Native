@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, SafeAreaView, FlatList, StatusBar, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 import CustomButton from '../../components/CustomButton';
+import CustomTextComponent from '../../components/CustomTextComponent';
 import HeaderComponent from '../../components/HeaderComponent';
 import SearchComponent from '../../components/SearchComponent';
 import { dummyData } from '../../constants/dummyData';
@@ -43,7 +44,10 @@ export default function DoctorSearchScreen({ navigation }) {
                             borderTopWidth: 8, borderColor: "#eee", borderRadius: 0
                         }}>
                             <View style={{ paddingTop: 10, alignItems: 'center', paddingBottom: 16 }}>
-                                <Text style={{ fontSize: 18, color: '#000' }}>Not able to find your doctor?</Text>
+                                <CustomTextComponent
+                                    text={"Not able to find your doctor?"}
+                                    fs={18} textColor={"#000"}
+                                />
                                 <View style={{ height: 16 }} />
                                 <CustomButton
                                     text="Call Now" fs={15}
@@ -105,7 +109,10 @@ export const BuildDetailDoctorComponent = ({ item, width, cardFooter, navigation
                     source={require("../../../assets/clock.png")}
                     style={{ width: 14, height: 14, marginRight: 7, tintColor: '#fff' }}
                 />
-                <Text style={{ fontSize: 10, fontWeight: "600", color: '#fff' }}>{`Available in\n48 min`}</Text>
+                <CustomTextComponent
+                    text={`Available in\n48 min`}
+                    fs={10} fw="600" textColor={"#fff"}
+                />
             </View>
 
             <BuildDoctorDetailsComponent item={item} cardFooter={cardFooter} navigation={navigation} />
@@ -119,9 +126,10 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
     const renderDoctorNameComponent = (item) => {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', }}>
-                <Text style={{ color: '#000', fontWeight: '700' }}>
-                    {item.name}
-                </Text>
+                <CustomTextComponent
+                    text={item.name}
+                    fs={14} fw="700" textColor={"#000"}
+                />
                 <Card style={styles.doctorStatudcardStyle} />
             </View>
         );
@@ -137,9 +145,10 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
                         marginRight: 2
                     }}
                 />
-                <Text style={{ color: '#000', fontWeight: '800', fontSize: 12 }}>
-                    {item.rating}
-                </Text>
+                <CustomTextComponent
+                    text={item.name}
+                    fs={12} fw="800" textColor={"#000"}
+                />
             </View>
         );
     }
@@ -147,9 +156,10 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
     const renderDoctorPriceComponent = (item, cardFooter) => {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={{ color: '#000', fontSize: 20, fontWeight: '700' }}>
-                    ₹ {item.price}
-                </Text>
+                <CustomTextComponent
+                    text={`₹ ${item.price}`}
+                    fs={20} fw="700" textColor={"#000"}
+                />
 
                 <CustomButton
                     text="Book" fs={12}
@@ -185,9 +195,10 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
                         tintColor: Colors.BLUE2,
                     }}
                 />
-                <Text style={{ color: '#000', fontSize: 14, fontWeight: '400' }}>
-                    Treated 800+ patients
-                </Text>
+                <CustomTextComponent
+                    text={`Treated 800+ patients`}
+                    fs={14} fw="400" textColor={"#000"}
+                />
             </View>
         );
     }

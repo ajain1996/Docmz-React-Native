@@ -117,7 +117,7 @@ export default function SelectScheduleCalendar({ navigation }) {
                                 >
                                     <Text style={{
                                         color: day === item.time ? Colors.WHITE : Colors.GREEN,
-                                        marginTop: 4,
+                                        marginTop: 4, fontFamily: 'Montserrat-Regular',
                                     }}>
                                         {item.time}
                                     </Text>
@@ -133,7 +133,10 @@ export default function SelectScheduleCalendar({ navigation }) {
                                 setSelectedValue={setSelectedValue}
                             />
                             <View style={{ height: 16 }} />
-                            <Text style={{ fontSize: 15, color: '#000', fontWeight: '600', marginVertical: 10 }}>
+                            <Text style={{
+                                fontSize: 15, color: '#000', marginVertical: 10,
+                                fontFamily: 'Montserrat-Regular', fontWeight: '600',
+                            }}>
                                 Write your problem
                             </Text>
                             <Card style={styles.inputCardStyle}>
@@ -180,12 +183,14 @@ const BuildDaysCardComponent = ({ data, index, day, setDay }) => {
             >
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={[styles.daysCardNumberStyle, {
-                        color: day === data.name ? Colors.WHITE : Colors.GREEN
+                        color: day === data.name ? Colors.WHITE : Colors.GREEN,
+                        fontFamily: 'Montserrat-Regular',
                     }]}>
                         {data.id}
                     </Text>
                     <Text style={[styles.daysCardTextStyle, {
-                        color: day === data.name ? Colors.WHITE : Colors.GREEN
+                        color: day === data.name ? Colors.WHITE : Colors.GREEN,
+                        fontFamily: 'Montserrat-Regular',
                     }]}>
                         {data.name}
                     </Text>
@@ -198,7 +203,10 @@ const BuildDaysCardComponent = ({ data, index, day, setDay }) => {
 
 const BuildTitleComponent = ({ title, color }) => {
     return (
-        <Text style={{ color: color ? color : Colors.BLACK, fontSize: 20, fontWeight: '600' }}>
+        <Text style={{
+            color: color ? color : Colors.BLACK, fontSize: 20, fontWeight: '600',
+            fontFamily: 'Montserrat-Regular',
+        }}>
             {title}
         </Text>
     );
@@ -208,7 +216,12 @@ const BuildTitleComponent = ({ title, color }) => {
 const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
     return (
         <>
-            <Text style={{ fontSize: 15, color: '#000', fontWeight: '600', marginVertical: 10 }}>Patient</Text>
+            <Text style={{
+                fontSize: 15, color: '#000', fontWeight: '600', marginVertical: 10,
+                fontFamily: 'Montserrat-Regular',
+            }}>
+                Patient
+            </Text>
             <View style={{
                 backgroundColor: '#fff', elevation: 4, shadowColor: "#999", width: "100%",
                 borderRadius: 8,
@@ -220,6 +233,7 @@ const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
                         color: selectedValue === undefined || selectedValue.length === 0 ? "#999" : '#000',
                         paddingHorizontal: 10
                     }}
+                    itemTextStyle={{ fontFamily: 'Montserrat-Regular', }}
                     onValueChange={(itemValue, itemIndex) => {
                         console.log("\n\n \n\n \n\n dfsdefgekfbnekfbekjbgekbgenhjb => ")
                         console.log(itemValue, itemIndex);
@@ -236,7 +250,7 @@ const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
                     <Picker.Item label="Value 7" value="v7" style={{ fontSize: 14 }} />
                     <Picker.Item label="Value 8" value="v8" style={{ fontSize: 14 }} />
                 </Picker>
-                <Image
+                {/* <Image
                     source={require("../../../assets/arrow-down.png")}
                     style={{
                         width: 28, height: 28,
@@ -244,7 +258,7 @@ const BuildPatientDetailsDropdown = ({ selectedValue, setSelectedValue }) => {
                         right: 8, top: 12,
                         tintColor: '#999'
                     }}
-                />
+                /> */}
             </View>
         </>
     );
@@ -273,7 +287,7 @@ const styles = StyleSheet.create({
         width: '100%', height: 190,
         paddingHorizontal: 18, color: "black",
         borderRadius: 10, paddingBottom: 16,
-        marginTop: -70
+        marginTop: -70, fontFamily: 'Montserrat-Regular',
     }
 });
 

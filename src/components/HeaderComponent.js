@@ -14,7 +14,10 @@ export default function HeaderComponent({ showIcon, text }) {
                     style={{ width: 12, height: 20, tintColor: showIcon ? "#000" : '#51B7B7' }}
                 />
             </TouchableOpacity>
-            <Text style={[styles.headerTextStyle, { color: showIcon ? "#000" : '#51B7B7', }]}> {text} </Text>
+            <Text style={[styles.headerTextStyle, {
+                color: showIcon ? "#000" : '#51B7B7',
+                fontFamily: 'Montserrat-Regular',
+            }]}> {text} </Text>
             {showIcon
                 ? <TouchableOpacity
                     style={styles.headerRightIconContainer}

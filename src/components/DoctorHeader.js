@@ -20,7 +20,10 @@ export default function DoctorHeader({ showIcon, text }) {
                     />
                 </TouchableOpacity>
                 <View style={{ width: showIcon ? "29%" : 20 }} />
-                <Text style={{ fontSize: 18, color: showIcon ? "#000" : '#51B7B7' }}>
+                <Text style={{
+                    fontSize: 18, color: showIcon ? "#000" : '#51B7B7',
+                    fontFamily: 'Montserrat-Regular',
+                }}>
                     {text}
                 </Text>
             </View>
