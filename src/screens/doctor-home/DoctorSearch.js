@@ -23,7 +23,7 @@ const DoctorSearch = ({ onPress }) => {
                 position: 'absolute', right: 20,
             }}>
                 <Image
-                    source={require("../../../assets/mail-filter.png")}
+                    source={require("../../../assets/filter.png")}
                     style={styles.singleIcon}
                 />
             </TouchableOpacity>
@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
     },
     singleIcon: {
         width: 28, height: 28,
-        tintColor: Colors.BLACK,
+        tintColor: Colors.BLUE2,
     },
 });

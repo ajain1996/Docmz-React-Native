@@ -7,12 +7,15 @@ import { Colors } from '../../utils/Colors';
 import { windowWidth } from '../../utils/utils';
 import AwesomeButton from "react-native-really-awesome-button";
 import DoctorHeader from '../../components/DoctorHeader';
+import { OverviewTabComponent, OverviewTabEducation, OverviewTabExperience } from './profile_component/OverviewTabComponent';
+import AvailibilityTabComponent from './profile_component/AvailibilityTabComponent';
+import { PatientReviewCardComponent, PatientReviewsTitleComponent } from './profile_component/PatientReviewsTabComponent';
 
 export default function DoctorProfileScreen() {
 
     const [showTab, setShowTab] = useState("tab1");
     const [showTimeTab, setShowTimeTab] = useState("val1");
-    const [showOverviewTab, setShowOverviewTab] = useState("o1");
+    const [showOverviewTab, setShowOverviewTab] = useState("overview");
 
     return (
         <ScrollView style={{ backgroundColor: 'white' }}>
@@ -34,9 +37,9 @@ export default function DoctorProfileScreen() {
                 text3="4.5"
                 image3={require("../../../assets/star.png")}
             />
-            <Text />
+            <View style={{ height: 10 }} />
 
-            <Card style={{ elevation: 5, shadowColor: '#999', marginTop: 10, marginHorizontal: 16 }}>
+            {/* <Card style={{ elevation: 5, shadowColor: '#999', marginTop: 10, marginHorizontal: 16 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
                     <BuildTabCardComponent
                         showTab={showTab}
@@ -125,54 +128,133 @@ export default function DoctorProfileScreen() {
                     />
                 </View> : <></>}
                 <Text />
-            </Card>
-            <Text />
+            </Card> */}
+            {/* <Text /> */}
 
-            <Card style={{ elevation: 5, shadowColor: '#999', marginTop: 12, marginHorizontal: 16 }}>
+            <Card style={{ elevation: 3, shadowColor: '#999', marginTop: 12, margin: 16 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <OverviewTabBlock
                         text="Overview"
                         showTab={showOverviewTab}
-                        selectedVal="o1"
-                        onPress={() => { setShowOverviewTab("o1") }}
+                        image={require("../../../assets/overview.png")}
+                        selectedVal="overview"
+                        onPress={() => { setShowOverviewTab("overview") }}
+                    />
+
+                    <OverviewTabBlock
+                        text="Availibility"
+                        showTab={showOverviewTab}
+                        image={require("../../../assets/availibility.png")}
+                        selectedVal="availibility"
+                        onPress={() => { setShowOverviewTab("availibility") }}
                     />
 
                     <OverviewTabBlock
                         text="Fees"
                         showTab={showOverviewTab}
-                        selectedVal="o2"
-                        onPress={() => { setShowOverviewTab("o2") }}
+                        image={require("../../../assets/fees.png")}
+                        selectedVal="fees"
+                        onPress={() => { setShowOverviewTab("fees") }}
                     />
 
                     <OverviewTabBlock
                         text="Reviews"
                         showTab={showOverviewTab}
-                        selectedVal="o3"
-                        onPress={() => { setShowOverviewTab("o3") }}
+                        image={require("../../../assets/reviews.png")}
+                        selectedVal="reviews"
+                        onPress={() => { setShowOverviewTab("reviews") }}
                     />
                 </View>
 
-                {showOverviewTab === "o1"
+                {showOverviewTab === "overview"
+                    ? <View style={{ padding: 16 }}>
+                        <OverviewTabComponent
+                            image={require("../../../assets/overview.png")}
+                            title={"About Dr. Co Ekartine"}
+                            info={"Dr. Co Ekartine is the topmost Gynecologist in Medicare Hospital. She has achieved several awards for her wonderful..."}
+                        />
+                        <View style={{ height: 24 }} />
+
+                        <OverviewTabComponent
+                            image={require("../../../assets/overview.png")}
+                            title={"Hospital Details"}
+                            info={"Everything Gynaec, Vile Parie West"}
+                        />
+
+                        <View style={{ height: 24 }} />
+
+                        <OverviewTabComponent
+                            image={require("../../../assets/overview.png")}
+                            title={"Specializes In"}
+                            info={"Gastroenterologist"}
+                            image2={require("../../../assets/stomach.png")}
+                        />
+
+                        <View style={{ height: 24 }} />
+
+                        <OverviewTabExperience
+                            image={require("../../../assets/overview.png")}
+                            title={"Experience"}
+                            year1={"Consultant"}
+                            year2={"Gynaec at Everything Gynaec"}
+                        />
+
+                        <View style={{ height: 24 }} />
+
+                        <OverviewTabEducation
+                            image={require("../../../assets/overview.png")}
+                            title={"Education"}
+                            education1={"Jawharlal Nehru Medical - 2001"}
+                            education2={"Medical College - 2007"}
+                        />
+                    </View>
+                    : <></>}
+
+                {showOverviewTab === "availibility"
+                    ? <View style={{ paddingHorizontal: 8 }}>
+                        <AvailibilityTabComponent />
+                    </View> : <></>}
+
+                {showOverviewTab === "fees"
                     ? <Card style={{ paddingHorizontal: 15, elevation: 5, shadowColor: '#999' }}>
-                        <BuildFifthComponent />
-                        <BuildFifthComponent />
+                        <BuildFeesComponent
+                            title="In-Clinic Appointment"
+                            image={require("../../../assets/home-plus.png")}
+                            feesInDollar={"80.70"}
+                            feesInRupees={"1400"}
+                        />
+                        <BuildFeesComponent
+                            title="Virtual Appointment"
+                            image={require("../../../assets/overview.png")}
+                            feesInDollar={"80.70"}
+                            feesInRupees={"1400"}
+                        />
                         <Text />
                     </Card> : <></>}
 
-                {showOverviewTab === "o2"
-                    ? <Card style={{ paddingHorizontal: 15, elevation: 5, shadowColor: '#999' }}>
-                        <BuildFifthComponent />
-                        <Text />
-                    </Card> : <></>}
+                {showOverviewTab === "reviews" ?
+                    <View style={{ paddingVertical: 16 }}>
+                        <PatientReviewsTitleComponent />
 
-                {showOverviewTab === "o3" ? <View style={styles.extraBlockStyle}>
-                    <CustomTextComponent
-                        text={"No Slots"} fs={20} fw={"normal"} textColor={Colors.BLACK90}
-                    />
-                </View> : <></>}
+                        <View style={{ backgroundColor: '#dcdcdc', height: 1.4, marginHorizontal: 22 }} />
+
+                        <PatientReviewCardComponent />
+
+                        <PatientReviewCardComponent />
+
+                        <PatientReviewCardComponent />
+
+                        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                            <Text />
+                            <TouchableOpacity>
+                                <Text style={{ color: Colors.BLUE2, fontSize: 18 }}>See More</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ height: 6 }} />
+                    </View> : <></>}
 
 
-                {showTimeTab === "val1"
+                {/* {showTimeTab === "val1"
                     ? <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 30 }}>
                         <BuildSlotsTabComponent
                             text="11:00 AM"
@@ -192,69 +274,43 @@ export default function DoctorProfileScreen() {
                             onPress={() => { }}
                         />
                     </View>
-                    : <></>}
-                <Text />
+                    : <></>} */}
             </Card>
-
-            <View style={{
-                justifyContent: 'center', alignItems: 'center', marginVertical: 50
-            }}>
-                <AwesomeButton width={200} height={50} borderRadius={100} backgroundColor={Colors.BLUE2}
-                    backgroundShadow={"#368edd"} activeOpacity={0.5} backgroundDarker={"#3d7fba"}
-                    onPress={() => { }}
-                >
-                    <CustomTextComponent
-                        text={"Book Appointment"} fs={16} fw={"normal"} textColor={"white"}
-                    />
-                </AwesomeButton>
-            </View>
-
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity style={{
-                    width: windowWidth - 2, height: 58, backgroundColor: '#EFA860',
-                    justifyContent: 'center', alignItems: 'center', borderRadius: 8,
-                    shadowColor: "#999999", shadowOpacity: 0.1, elevation: 9,
-                    shadowRadius: 2, shadowOffset: { height: 2, width: 0 },
-                }}>
-                    <CustomTextComponent
-                        text="Book Appointment" fs={18} textColor={"#fff"}
-                    />
-                </TouchableOpacity>
-            </View>
+            <View style={{ height: 60 }} />
         </ScrollView>
     )
 }
 
 
-const BuildFifthComponent = () => {
+const BuildFeesComponent = ({ image, title, feesInDollar, feesInRupees }) => {
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
-            <Card style={{ elevation: 5, shadowColor: '#999', marginTop: 20 }}>
+            <Card style={{ elevation: 4, shadowColor: '#999', marginTop: 20, width: "100%", }}>
                 <View style={{
-                    flexDirection: 'row', justifyContent: 'space-between',
-                    paddingLeft: 15, paddingVertical: 10,
-                    alignItems: 'center', width: "90%",
+                    flexDirection: 'row', alignItems: 'center',
+                    paddingHorizontal: 15, paddingVertical: 10, justifyContent: 'space-between',
                 }}>
-                    <View style={{
-                        width: 30, backgroundColor: '#eee', justifyContent: 'center',
-                        alignItems: 'center', height: 30, borderRadius: 200,
-                    }}>
-                        <Image
-                            source={require("../../../assets/arrow-down.png")}
-                            style={{ width: 15, height: 15, tintColor: Colors.BLUE }}
-                        />
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{
+                            width: 26, backgroundColor: '#eee', justifyContent: 'center',
+                            alignItems: 'center', height: 26, borderRadius: 200,
+                        }}>
+                            <Image
+                                source={image}
+                                style={{ width: 14, height: 14, tintColor: Colors.BLUE }}
+                            />
+                        </View>
+                        <Text style={{ fontSize: 13, marginLeft: 6, fontFamily: 'Montserrat-Regular', }}>
+                            {title}
+                        </Text>
                     </View>
-                    <Text style={{ color: "black", marginLeft: 4, fontFamily: 'Montserrat-Regular', }}>
-                        In-Clinic Appointment
-                    </Text>
-                    <View style={{ width: 10 }} />
                     <View style={{ flexDirection: 'column', alignItems: 'flex-end' }}>
                         <CustomTextComponent
-                            text={"Fees: $ 80.70"} fs={13} fw={"300"} textColor={Colors.LIGHTGRAY}
+                            text={`Fees: $ ${feesInDollar}`} fs={12} fw={"300"} textColor={Colors.LIGHTGRAY}
                         />
 
                         <CustomTextComponent
-                            text={"₹ 1400"} fs={13} fw={"300"} textColor={Colors.LIGHTGRAY}
+                            text={`₹ ${feesInRupees}`} fs={12} fw={"300"} textColor={Colors.LIGHTGRAY}
                         />
                     </View>
                 </View>
@@ -295,10 +351,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         paddingVertical: 18
     },
-    extraBlockStyle: {
-        width: '94%', height: 80, justifyContent: 'center', alignItems: 'center',
-        marginBottom: -10, borderWidth: 1, borderColor: '#eeeeee', margin: 12,
-        borderRadius: 10
-    }
 });
 

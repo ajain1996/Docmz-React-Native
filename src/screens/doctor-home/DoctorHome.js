@@ -18,6 +18,7 @@ export default function DoctorHome() {
                 <DoctorHeader showIcon={false} text="Doctor's for 'Bad Stomach'" />
                 <View style={{ paddingHorizontal: 16 }}>
                     <DoctorSearch onPress={() => { navigation.navigate("DoctorSearchScreen") }} />
+                    <View style={{ height: 8 }} />
                     {
                         [1, 2, 3, 4, 5, 6].map((data, index) => {
                             return (
@@ -26,6 +27,7 @@ export default function DoctorHome() {
                                         navigation={navigation}
                                         drName="Dr. Co Ekaterine"
                                         drInfo="Dynaecologist | MBBS, NBD"
+                                        rating="4.5"
                                         image='https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                                         desc="English, Hindi, Gujarati, Maharathi"
                                     />
@@ -57,9 +59,9 @@ const BuildCardButtonComponent = ({ image, text }) => {
         <TouchableOpacity style={styles.button_shadow}>
             <Image
                 source={image}
-                style={{ width: 18, height: 18, tintColor: '#3387d2' }}
+                style={{ width: 16, height: 16, tintColor: '#FF0000' }}
             />
-            <Text style={{ fontSize: 12, color: 'black', marginLeft: 4, fontFamily: 'Montserrat-Regular', }}>
+            <Text style={{ fontSize: 11, color: 'black', marginLeft: 4, fontFamily: 'Montserrat-Regular', }}>
                 {text}
             </Text>
         </TouchableOpacity>
@@ -68,7 +70,7 @@ const BuildCardButtonComponent = ({ image, text }) => {
 
 const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, image }) => {
     return (
-        <Card style={{ elevation: 10, marginVertical: 16, shadowColor: "silver", paddingBottom: 10 }}>
+        <Card style={{ elevation: 4, marginVertical: 8, shadowColor: "#999", paddingBottom: 10 }}>
             <View style={styles.shadow}>
                 <View>
                     <Image
@@ -103,7 +105,7 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                         </View>
                     </View>
                     <CustomTextComponent
-                        text={drInfo} fs={14} fw={"300"} textColor={Colors.BLACK}
+                        text={drInfo} fs={13} fw={"300"} textColor={Colors.gray}
                     />
                     <View style={{ height: 8 }} />
 
@@ -112,7 +114,7 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                             image={require("../../../assets/user.png")}
                             text={"8 Years"}
                         />
-                        <View style={{ width: 12 }} />
+                        <View style={{ width: 8 }} />
                         <BuildCardButtonComponent
                             image={require("../../../assets/location.png")}
                             text={"Ahmedabad, IN"}
@@ -120,7 +122,18 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                     </View>
                     <View style={{ height: 8 }} />
 
-                    <View style={{ flexDirection: 'row', alignItems: "flex-start", width: "80%" }}>
+                    <View style={{ flexDirection: 'row', marginVertical: 4 }}>
+                        <BuildDoctorAvailibility
+                            text="Available in 48  min"
+                        />
+                        <View style={{ width: 8 }} />
+                        <BuildDoctorAvailibility
+                            text="Treated 800+ patients"
+                        />
+                    </View>
+                    {/* <View style={{ height: 8 }} /> */}
+
+                    {/* <View style={{ flexDirection: 'row', alignItems: "flex-start", width: "80%" }}>
                         <Image
                             source={require('../../../assets/globe.png')}
                             style={{
@@ -134,8 +147,8 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                         <CustomTextComponent
                             text={desc} fs={12.5} fw={"normal"} textColor={"silver"}
                         />
-                    </View>
-                    <View style={{ height: 5 }} />
+                    </View> */}
+                    {/* <View style={{ height: 5 }} /> */}
                 </View>
             </View>
             <View style={{ alignItems: 'center' }}>
@@ -167,6 +180,14 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
     );
 }
 
+const BuildDoctorAvailibility = ({ text }) => {
+    return (
+        <View style={{ paddingHorizontal: 6, paddingVertical: 6, backgroundColor: '#EEEEEE', borderRadius: 4 }}>
+            <Text style={{ fontSize: 11, fontFamily: 'Montserrat-Regular', fontWeight: '800' }}>{text}</Text>
+        </View>
+    );
+}
+
 const styles = StyleSheet.create({
     shadow: {
         flexDirection: 'row', justifyContent: 'space-between',
@@ -177,18 +198,19 @@ const styles = StyleSheet.create({
     },
     button_shadow: {
         flexDirection: 'row',
-        shadowColor: "#999999",
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
-        shadowOffset: {
-            height: 2,
-            width: 0
-        },
-        elevation: 4,
-        borderRadius: 30,
-        backgroundColor: 'white',
-        paddingHorizontal: 12,
-        paddingVertical: 6
+        // shadowColor: "#999999",
+        // shadowOpacity: 0.1,
+        // shadowRadius: 2,
+        // shadowOffset: {
+        //     height: 2,
+        //     width: 0
+        // },
+        // elevation: 4,
+        borderRadius: 4,
+        backgroundColor: '#EEEEEE',
+        paddingHorizontal: 6,
+        paddingVertical: 5,
+        alignItems: 'center',
     },
     button_bookAppointment: {
         flexDirection: 'row',

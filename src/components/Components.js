@@ -11,30 +11,36 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
             <View>
                 <Image
                     source={{ uri: image }}
-                    style={{ width: 100, height: 100, borderRadius: 100 }}
+                    style={{ width: 90, height: 90, borderRadius: 100 }}
                 />
                 <Card style={styles.activeGreenBtn} />
             </View>
             <View style={{ flexDirection: 'column', width: windowWidth - 162, marginLeft: 16 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <CustomTextComponent
-                        text={name} fs={20} fw={"600"} textColor={Colors.BLACK}
-                    />
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <CustomTextComponent
+                            text={name} fs={18} fw={"600"} textColor={Colors.BLACK}
+                        />
+                        <View style={{ width: 8 }} />
                         <Image
                             source={require("../../assets/heart-fill.png")}
                             style={{ width: 20, height: 20, tintColor: "#ff0000" }}
                         />
-                        <View style={{ width: 10 }} />
-                        <Image
-                            source={require("../../assets/share.png")}
-                            style={{ width: 22, height: 22 }}
-                        />
                     </View>
+                    <Image
+                        source={require("../../assets/share.png")}
+                        style={{ width: 22, height: 22 }}
+                    />
                 </View>
-                <CustomTextComponent
-                    text={info} fs={15} fw={"300"} textColor={Colors.BLACK}
-                />
+                <View style={{ flexDirection: 'row' }}>
+                    <CustomTextComponent
+                        text={info} fs={14} fw={"300"} textColor={Colors.gray}
+                    />
+                    <Image
+                        source={require("../../assets/exclaimation.png")}
+                        style={{ width: 18, height: 18, tintColor: '#dcdcdc' }}
+                    />
+                </View>
                 <View style={{ height: 4 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 6 }}>
@@ -94,8 +100,8 @@ export const PersonalInfoCardComponent = ({ title, text, image }) => {
     return (
         <Card style={{
             flexDirection: 'column', elevation: 4, shadowColor: 'silver', height: 75,
-            paddingHorizontal: 16, paddingTop: 11, width: windowWidth / 3 - 25,
-            justifyContent: 'center', alignItems: 'center', borderRadius: 14
+            paddingHorizontal: 16, paddingTop: 11, width: windowWidth / 3 - 22,
+            justifyContent: 'center', alignItems: 'center', borderRadius: 10,
         }}>
             <CustomTextComponent
                 text={title} fs={14} fw={"300"} textColor={"grey"} textAign={"center"}
@@ -171,18 +177,22 @@ export const BuildSlotsTabComponent = ({ text, onPress, isSelected }) => {
 }
 
 
-export const OverviewTabBlock = ({ text, onPress, selectedVal, showTab }) => {
+export const OverviewTabBlock = ({ text, onPress, selectedVal, showTab, image }) => {
     return (
         <Card style={{
-            elevation: selectedVal === showTab ? 5 : 0,
-            shadowColor: '#999', width: "33.3%", paddingVertical: 11,
+            elevation: selectedVal === showTab ? 3 : 0, shadowColor: '#eee',
+            width: "25%", paddingVertical: 11, borderRadius: 4,
             backgroundColor: selectedVal === showTab ? '#fff' : '#f7f8f9',
         }}>
-            <TouchableOpacity onPress={() => onPress()}>
-                <CustomTextComponent
-                    text={text} fs={16} fw={"normal"} textColor={Colors.BLUE} textAign="center"
-                />
-                <View style={{ marginRight: 20 }} />
+            <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => onPress()}>
+                {selectedVal === showTab ? <CustomTextComponent
+                    text={text} fs={14} fw={"normal"} textAign="center"
+                    textColor={selectedVal === showTab ? Colors.red : Colors.BLUE}
+                /> : <Image
+                    source={image}
+                    style={{ width: 21, height: 21, tintColor: Colors.BLUE }}
+                />}
+                {/* <View style={{ marginRight: 20 }} /> */}
             </TouchableOpacity>
         </Card>
     );
@@ -200,9 +210,9 @@ const styles = StyleSheet.create({
     activeGreenBtn: {
         width: 14, height: 14,
         backgroundColor: '#51B7B7',
-        borderRadius: 100, right: 5,
+        borderRadius: 100, right: 0,
         position: 'absolute',
-        bottom: 22, borderWidth: 2,
+        bottom: 35, borderWidth: 2,
         borderColor: 'white',
         elevation: 4, shadowColor: '#999',
     },

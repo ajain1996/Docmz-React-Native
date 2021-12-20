@@ -8932,12 +8932,19 @@
   "version" "0.9.4"
 
 "react-native-ratings@^7.2.0":
-  "integrity" "sha512-NCDIkmrVPnxPzP9zKdlcNpa2rPs3Hiv2qXsojUr3FpwbANWfgYE+jjGSSCBcS3vpXndTjhoaTGFDnybnUSFPFA=="
-  "resolved" "https://registry.npmjs.org/react-native-ratings/-/react-native-ratings-7.3.0.tgz"
-  "version" "7.3.0"
+  "integrity" "sha512-V3y19iIifwemMr87KfovFIIzy/Rotqcds9k+ECaayQvrlucm/mXFC69R8xl/NivEdnxX7K87iurigByhpE37EQ=="
+  "resolved" "https://registry.npmjs.org/react-native-ratings/-/react-native-ratings-7.6.1.tgz"
+  "version" "7.6.1"
   dependencies:
     "lodash" "^4.17.15"
     "prop-types" "^15.7.2"
+
+"react-native-ratings@^8.1.0":
+  "integrity" "sha512-+QOJ4G3NjVkI1D+tk4EGx1dCvVfbD2nQdkrj9cXrcAoEiwmbep4z4bZbCKmWMpQ5h2dqbxABU8/eBnbDmvAc3g=="
+  "resolved" "https://registry.npmjs.org/react-native-ratings/-/react-native-ratings-8.1.0.tgz"
+  "version" "8.1.0"
+  dependencies:
+    "lodash" "^4.17.15"
 
 "react-native-razorpay@2.1.33":
   "integrity" "sha512-m9Cda5ajXioxaJDi+u/Espr+jEV8FZZ+5j3GDFQ0lE/wsxeMWnHaHOEnMZMbHhdGwxD+I9juuM73Q/Tk3nFzZQ=="

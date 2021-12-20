@@ -141,6 +141,46 @@ export const availableTimeSlots = [
 ];
 
 
+export const availableTimeSlots2 = [
+    {
+        "time": "09:00 AM",
+        "id": 1,
+    },
+    {
+        "time": "09:30 AM",
+        "id": 2,
+    },
+    {
+        "time": "10:00 AM",
+        "id": 3,
+    },
+    {
+        "time": "10:30 AM",
+        "id": 4,
+    },
+    {
+        "time": "12:00 AM",
+        "id": 5,
+    },
+    {
+        "time": "12:30 AM",
+        "id": 6,
+    },
+];
+
+
+export const availableTimeSlots3 = [
+    {
+        "time": "09:00 AM",
+        "id": 1,
+    },
+    {
+        "time": "09:30 AM",
+        "id": 2,
+    },
+];
+
+
 export const dummyDaysData = [
     {
         "name": "MON",
