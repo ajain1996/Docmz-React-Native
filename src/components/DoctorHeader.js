@@ -13,7 +13,7 @@ export default function DoctorHeader({ showIcon, text }) {
             alignItems: 'center', height: 52, paddingHorizontal: 20, justifyContent: 'space-between'
         }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => { navigation.goBack() }}>
                     <Image
                         source={require("../../assets/arrow-back.png")}
                         style={{ width: 12, height: 20, tintColor: '#51B7B7' }}
@@ -22,7 +22,7 @@ export default function DoctorHeader({ showIcon, text }) {
                 <View style={{ width: showIcon ? "29%" : 20 }} />
                 <Text style={{
                     fontSize: 18, color: showIcon ? "#000" : '#51B7B7',
-                    fontFamily: 'Montserrat-Regular',
+                    fontFamily: 'Montserrat-Regular', marginBottom: 8
                 }}>
                     {text}
                 </Text>

@@ -17,7 +17,11 @@ export const PatientReviewsTitleComponent = () => {
                 width: 24, height: 24, backgroundColor: Colors.GREEN,
                 borderRadius: 100, justifyContent: 'center', alignItems: 'center'
             }}>
-                <Text style={{ color: '#fff', fontSize: 20 }}>+</Text>
+                <Image
+                    source={require("../../../../assets/plus-icon.png")}
+                    style={{ width: 10, height: 10, tintColor: '#fff' }}
+                />
+                {/* <Text style={{ color: '#fff', fontSize: 20 }}>+</Text> */}
             </View>
         </View>
     )

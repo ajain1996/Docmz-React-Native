@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     },
     searchContainer: {
         flexDirection: 'row', alignItems: 'center', marginTop: 10,
-        borderRadius: 10,
-        elevation: 5, shadowColor: '#999', overflow: 'hidden',
+        borderRadius: 50, borderWidth: 0, borderColor: "#fff",
+        elevation: 5, shadowColor: '#fff', overflow: 'hidden',
     },
     singleIcon: {
         width: 28, height: 28,

@@ -4,16 +4,16 @@ import { Card } from 'react-native-paper';
 import CustomTextComponent from '../../../components/CustomTextComponent';
 import { Colors } from '../../../utils/Colors';
 
-export const OverviewTabComponent = ({ image, title, info, image2 }) => {
+export const OverviewTabComponent = ({ image, title, info, image2, showMoreText }) => {
     return (
         <View style={{ flexDirection: 'row' }}>
             <BuildOverviewTabIcon
                 image={image}
             />
             <View style={{ width: 20 }} />
-            <View style={{ width: "85%" }}>
+            <View style={{ width: "80%" }}>
                 <CustomTextComponent
-                    text={title} fs={16} fw={"700"} textColor={"#000"}
+                    text={title} fs={16} fw={"700"} textColor={"#000"} lineHeight={20}
                 />
                 <View style={{ marginTop: 8 }} />
                 {image2 ? <View style={{}}>
@@ -28,15 +28,22 @@ export const OverviewTabComponent = ({ image, title, info, image2 }) => {
                         }}>
                             <Image
                                 source={image2}
-                                style={{ width: 40, height: 40, tintColor: Colors.BLUE2 }}
+                                style={{ width: 40, height: 40, tintColor: Colors.GREEN }}
                             />
                         </View>
                     </Card>
                 </View> : <></>}
                 {image2 ? <View style={{ marginTop: 10 }} /> : <></>}
-                <CustomTextComponent
-                    text={info} fs={14} fw={"600"} textColor={"#000"}
-                />
+                <View style={{}}>
+                    <CustomTextComponent
+                        text={info} fs={14} fw={"600"} textColor={"#000"} lineHeight={20}
+                    />
+                    {showMoreText ? <View style={{ position: 'absolute', bottom: 2, left: 100 }}>
+                        <CustomTextComponent
+                            text={"Show More"} fs={12} fw={"500"} textColor={Colors.red}
+                        />
+                    </View> : <></>}
+                </View>
             </View>
         </View>
     )
@@ -56,7 +63,7 @@ const BuildOverviewTabIcon = ({ image }) => {
                 }}>
                     <Image
                         source={image}
-                        style={{ width: 22, height: 22, tintColor: Colors.BLUE2 }}
+                        style={{ width: 22, height: 22, tintColor: Colors.GREEN }}
                     />
                 </View>
             </Card>

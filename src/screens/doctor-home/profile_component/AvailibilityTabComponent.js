@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Calendar } from 'react-native-calendars';
 import { Card } from 'react-native-paper';
 import AwesomeButton from 'react-native-really-awesome-button';
 import CustomTextComponent from '../../../components/CustomTextComponent';
@@ -26,6 +27,11 @@ const BuildArrowComponent = ({ image }) => {
 
 export default function AvailibilityTabComponent() {
     const [day, setDay] = useState("");
+    const [showCalander, setShowCalander] = useState(false);
+
+    const vacation = { key: 'vacation', color: 'green', selectedDotColor: 'blue' };
+    const massage = { key: 'massage', color: 'blue', selectedDotColor: 'blue' };
+    const workout = { key: 'workout', color: 'yellow' };
 
     const renderDaysCardComponent = () => {
         return (
@@ -36,7 +42,9 @@ export default function AvailibilityTabComponent() {
                         image={require('../../../../assets/arrow-back.png')}
                     />
                     <View style={{ width: 16 }} />
-                    <BuildTitleComponent title="November 2021" />
+                    <TouchableOpacity onPress={() => { setShowCalander(!showCalander) }}>
+                        <BuildTitleComponent title="November 2021" />
+                    </TouchableOpacity>
                     <Image
                         source={require('../../../../assets/arrow-down.png')}
                         style={{
@@ -49,6 +57,42 @@ export default function AvailibilityTabComponent() {
                         image={require('../../../../assets/arrow-forward.png')}
                     />
                 </View>
+                <View style={{ height: 16 }} />
+
+                {showCalander
+                    ? <Card style={{
+                        elevation: 4, shadowColor: Colors.SILVER, borderRadius: 10, paddingVertical: 4
+                    }}>
+                        <Calendar
+                            current={new Date()}
+                            minDate={'1912-05-10'}
+                            maxDate={'2050-05-30'}
+                            onDayPress={(day) => { console.log('selected day', day.dateString) }}
+                            monthFormat={'yyyy-MM-dd'}
+                            onMonthChange={(month) => { console.log('month changed', month.month) }}
+                            hideArrows={true}
+                            hideExtraDays={true}
+                            disableMonthChange={true}
+                            firstDay={1}
+                            hideDayNames={false}
+                            showWeekNumbers={false}
+                            onPressArrowLeft={subtractMonth => subtractMonth()}
+                            onPressArrowRight={addMonth => addMonth()}
+                            disableArrowLeft={true}
+                            disableArrowRight={true}
+                            disableAllTouchEventsForDisabledDays={true}
+                            renderHeader={(date) => { }}
+                            markedDates={{
+                                '2021-12-25': { dots: [vacation, massage, workout], selected: true, selectedColor: Colors.GREEN },
+                                '2021-12-16': {
+                                    selected: true, marked: true, selectedColor: Colors.BLUE2
+                                },
+                                '2021-12-26': { dots: [massage, workout], disabled: true }
+                            }}
+                            enableSwipeMonths={true}
+                            style={{ borderRadius: 30 }}
+                        />
+                    </Card> : <></>}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     {
                         dummyDaysData.map((data, index) => {
@@ -190,18 +234,6 @@ export default function AvailibilityTabComponent() {
                                 </View>
                             }
                         />
-                        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                            <AwesomeButton
-                                width={240} height={52} backgroundShadow={"#368edd"}
-                                backgroundColor={Colors.BLUE2} borderRadius={100}
-                                activeOpacity={0.5} backgroundDarker={"#3d7fba"}
-                                onPress={() => { }} raiseLevel={2.5}
-                            >
-                                <CustomTextComponent
-                                    text={"Book Appointment"} fs={16} fw={"normal"} textColor={"#fff"}
-                                />
-                            </AwesomeButton>
-                        </View>
                     </View>
                 }
             />
@@ -256,15 +288,13 @@ const BuildDaysCardComponent = ({ data, index, day, setDay }) => {
 
 const BuildShowTimeSlot = ({ item, index, day, setDay }) => {
     return (
-        <Card key={index} style={{
-            elevation: 3, shadowColor: "#999", marginTop: 14, borderRadius: 10
-        }}>
+        <Card key={index} style={{ elevation: 3, marginTop: 14, borderRadius: 10 }}>
             <AwesomeButton
-                backgroundColor={day === item.time ? Colors.GREEN : "#EEEEEE"}
-                backgroundShadow={day === item.time ? Colors.GREEN : "#EEEEEE"}
+                backgroundColor={day === item.time ? "#4CABAB" : "#EEEEEE"}
+                backgroundShadow={day === item.time ? "#52BABA" : "#EEEEEE"}
                 activeOpacity={0.5} elevation={8} height={38} width={windowWidth / 4 - 24}
-                backgroundDarker={day === item.time ? Colors.GREEN : "#EEEEEE"}
-                borderRadius={8} onPress={() => { setDay(item.time) }} raiseLevel={2.5}
+                backgroundDarker={day === item.time ? "#52BABA" : "#EEEEEE"}
+                borderRadius={8} onPress={() => { setDay(item.time) }} raiseLevel={3}
             >
                 <Text style={{
                     color: day === item.time ? Colors.WHITE : Colors.GREEN,
@@ -276,6 +306,25 @@ const BuildShowTimeSlot = ({ item, index, day, setDay }) => {
         </Card>
     );
 }
+
+{/* <Card key={index} style={{ elevation: 3, marginTop: 14, borderRadius: 10 }}>
+    <TouchableOpacity onPress={() => { setDay(item.time) }} raiseLevel={2.5}
+        style={{
+            width: windowWidth / 4 - 24, height: 38, borderRadius: 8,
+            backgroundColor: day === item.time ? Colors.GREEN : Colors.WHITE,
+            justifyContent: 'center', alignItems: 'center'
+        }}
+    >
+        <LinearGradient colors={["#62D0D0", "#62D0D0", "#49A2A2"]} locations={[0.3, 0, 0]}>
+        <Text style={{
+            color: day === item.time ? Colors.WHITE : Colors.GREEN,
+            fontFamily: 'Montserrat-Regular', fontSize: 13
+        }}>
+            {item.time}
+        </Text>
+        </LinearGradient>
+    </TouchableOpacity>
+</Card> */}
 
 
 const styles = StyleSheet.create({

@@ -15,7 +15,7 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
                 />
                 <Card style={styles.activeGreenBtn} />
             </View>
-            <View style={{ flexDirection: 'column', width: windowWidth - 162, marginLeft: 16 }}>
+            <View style={{ flexDirection: 'column', width: windowWidth / 1.52, marginLeft: 16 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <CustomTextComponent
@@ -28,7 +28,7 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
                         />
                     </View>
                     <Image
-                        source={require("../../assets/share.png")}
+                        source={require("../../assets/dots.png")}
                         style={{ width: 22, height: 22 }}
                     />
                 </View>
@@ -36,10 +36,12 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
                     <CustomTextComponent
                         text={info} fs={14} fw={"300"} textColor={Colors.gray}
                     />
-                    <Image
-                        source={require("../../assets/exclaimation.png")}
-                        style={{ width: 18, height: 18, tintColor: '#dcdcdc' }}
-                    />
+                    <View style={{
+                        width: 16, height: 16, backgroundColor: '#dcdcdc', borderRadius: 100,
+                        justifyContent: 'center', alignItems: 'center', marginLeft: 8,
+                    }}>
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', color: '#fff' }}>!</Text>
+                    </View>
                 </View>
                 <View style={{ height: 4 }} />
 
@@ -179,9 +181,10 @@ export const BuildSlotsTabComponent = ({ text, onPress, isSelected }) => {
 
 export const OverviewTabBlock = ({ text, onPress, selectedVal, showTab, image }) => {
     return (
-        <Card style={{
-            elevation: selectedVal === showTab ? 3 : 0, shadowColor: '#eee',
-            width: "25%", paddingVertical: 11, borderRadius: 4,
+        <View style={{
+            width: "25%", paddingVertical: 11,
+            borderTopLeftRadius: selectedVal === "overview" ? 6 : 0,
+            borderTopRightRadius: selectedVal === "reviews" ? 6 : 0,
             backgroundColor: selectedVal === showTab ? '#fff' : '#f7f8f9',
         }}>
             <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => onPress()}>
@@ -194,7 +197,7 @@ export const OverviewTabBlock = ({ text, onPress, selectedVal, showTab, image })
                 />}
                 {/* <View style={{ marginRight: 20 }} /> */}
             </TouchableOpacity>
-        </Card>
+        </View>
     );
 }
 

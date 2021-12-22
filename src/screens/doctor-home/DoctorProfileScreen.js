@@ -131,7 +131,7 @@ export default function DoctorProfileScreen() {
             </Card> */}
             {/* <Text /> */}
 
-            <Card style={{ elevation: 3, shadowColor: '#999', marginTop: 12, margin: 16 }}>
+            <Card style={{ elevation: 4, shadowColor: '#999', margin: 16, borderRadius: 6 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <OverviewTabBlock
                         text="Overview"
@@ -167,46 +167,50 @@ export default function DoctorProfileScreen() {
                 </View>
 
                 {showOverviewTab === "overview"
-                    ? <View style={{ padding: 16 }}>
-                        <OverviewTabComponent
-                            image={require("../../../assets/overview.png")}
-                            title={"About Dr. Co Ekartine"}
-                            info={"Dr. Co Ekartine is the topmost Gynecologist in Medicare Hospital. She has achieved several awards for her wonderful..."}
-                        />
-                        <View style={{ height: 24 }} />
+                    ? <View style={{ padding: 16, flexDirection: 'row', }}>
+                        <View style={{ width: 1, backgroundColor: '#eee', height: "85%", marginLeft: 14 }} />
+                        <View style={{ marginLeft: -17 }}>
+                            <OverviewTabComponent
+                                image={require("../../../assets/overview.png")}
+                                title={"About Dr. Co Ekartine"}
+                                info={"Dr. Co Ekartine is the topmost Gynecologist in Medicare Hospital. She has achieved several awards for her wonderful..."}
+                                showMoreText={true}
+                            />
+                            <View style={{ height: 24 }} />
 
-                        <OverviewTabComponent
-                            image={require("../../../assets/overview.png")}
-                            title={"Hospital Details"}
-                            info={"Everything Gynaec, Vile Parie West"}
-                        />
+                            <OverviewTabComponent
+                                image={require("../../../assets/overview.png")}
+                                title={"Hospital Details"}
+                                info={"Everything Gynaec, Vile Parie West"}
+                            />
 
-                        <View style={{ height: 24 }} />
+                            <View style={{ height: 24 }} />
 
-                        <OverviewTabComponent
-                            image={require("../../../assets/overview.png")}
-                            title={"Specializes In"}
-                            info={"Gastroenterologist"}
-                            image2={require("../../../assets/stomach.png")}
-                        />
+                            <OverviewTabComponent
+                                image={require("../../../assets/overview.png")}
+                                title={"Specializes In"}
+                                info={"Gastroenterologist"}
+                                image2={require("../../../assets/stomach.png")}
+                            />
 
-                        <View style={{ height: 24 }} />
+                            <View style={{ height: 24 }} />
 
-                        <OverviewTabExperience
-                            image={require("../../../assets/overview.png")}
-                            title={"Experience"}
-                            year1={"Consultant"}
-                            year2={"Gynaec at Everything Gynaec"}
-                        />
+                            <OverviewTabExperience
+                                image={require("../../../assets/overview.png")}
+                                title={"Experience"}
+                                year1={"Consultant"}
+                                year2={"Gynaec at Everything Gynaec"}
+                            />
 
-                        <View style={{ height: 24 }} />
+                            <View style={{ height: 24 }} />
 
-                        <OverviewTabEducation
-                            image={require("../../../assets/overview.png")}
-                            title={"Education"}
-                            education1={"Jawharlal Nehru Medical - 2001"}
-                            education2={"Medical College - 2007"}
-                        />
+                            <OverviewTabEducation
+                                image={require("../../../assets/overview.png")}
+                                title={"Education"}
+                                education1={"Jawharlal Nehru Medical - 2001"}
+                                education2={"Medical College - 2007"}
+                            />
+                        </View>
                     </View>
                     : <></>}
 
@@ -276,6 +280,32 @@ export default function DoctorProfileScreen() {
                     </View>
                     : <></>} */}
             </Card>
+
+            {showOverviewTab === "availibility"
+                ? <Card style={{ elevation: 4, shadowColor: '#999', paddingVertical: 12, marginHorizontal: 16 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        <Image
+                            source={require("../../../assets/calendar.png")}
+                            style={{ width: 24, height: 24, tintColor: Colors.GREEN }}
+                        />
+                        <Text style={{ marginLeft: 6 }}>14 Nov 2021, 12:30 PM</Text>
+                    </View>
+                </Card>
+                : <></>}
+
+
+            <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
+                <AwesomeButton
+                    width={240} height={52} backgroundShadow={"#368edd"}
+                    backgroundColor={Colors.BLUE2} borderRadius={100}
+                    activeOpacity={0.5} backgroundDarker={"#3d7fba"}
+                    onPress={() => { }} raiseLevel={2.5}
+                >
+                    <CustomTextComponent
+                        text={"Book Appointment"} fs={16} fw={"normal"} textColor={"#fff"}
+                    />
+                </AwesomeButton>
+            </View>
             <View style={{ height: 60 }} />
         </ScrollView>
     )
