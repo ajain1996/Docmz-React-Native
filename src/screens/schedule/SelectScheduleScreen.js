@@ -8,6 +8,7 @@ import { availableTimeSlots, dummyDaysData, listOfPatients } from '../../constan
 import { Colors } from '../../utils/Colors';
 import { windowHeight, windowWidth } from '../../utils/utils';
 import CustomTextComponent from '../../components/CustomTextComponent';
+import DmzButton from '../../components/atoms/SwitchButton/SwitchButton';
 
 export default function SelectScheduleScreen({ navigation }) {
 
@@ -70,7 +71,23 @@ export default function SelectScheduleScreen({ navigation }) {
                             <Card key={index} style={{
                                 elevation: 6, shadowColor: Colors.SILVER, marginTop: 16, borderRadius: 10
                             }}>
-                                <AwesomeButton
+                                <DmzButton
+                                    text={item.time}
+                                    style={{
+                                        Container: {
+                                            width: windowWidth / 4 - 18, height: 40,
+                                            alignSelf: 'center',
+                                            backgroundColor: day === item.time ? Colors.GREEN : Colors.WHITE,
+                                            borderRadius: 8,
+                                        },
+                                        Text: {
+                                            fontSize: 12,
+                                            color: day === item.time ? Colors.WHITE : Colors.GREEN,
+                                        },
+                                    }}
+                                    onPress={() => { setDay(item.time) }}
+                                />
+                                {/* <AwesomeButton
                                     backgroundColor={day === item.time ? Colors.GREEN : Colors.WHITE}
                                     backgroundShadow={day === item.time ? Colors.GREEN2 : Colors.WHITE}
                                     activeOpacity={0.5} elevation={8} height={40} width={windowWidth / 4 - 18}
@@ -83,7 +100,7 @@ export default function SelectScheduleScreen({ navigation }) {
                                     }}>
                                         {item.time}
                                     </Text>
-                                </AwesomeButton>
+                                </AwesomeButton> */}
                             </Card>
                         );
                     }}
@@ -111,7 +128,24 @@ export default function SelectScheduleScreen({ navigation }) {
                                 />
                             </Card>
                             <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
-                                <AwesomeButton
+                                <DmzButton
+                                    text={"Book Appointment"}
+                                    style={{
+                                        Container: {
+                                            width: 240, height: 52,
+                                            alignSelf: 'center',
+                                            backgroundColor: Colors.BLUE2,
+                                            borderRadius: 30,
+                                        },
+                                        Text: {
+                                            fontSize: 16,
+                                            color: '#fff',
+                                            fontWeight: '600'
+                                        },
+                                    }}
+                                    onPress={() => { }}
+                                />
+                                {/* <AwesomeButton
                                     width={240} height={52} backgroundShadow={"#368edd"}
                                     backgroundColor={Colors.BLUE2} borderRadius={100}
                                     activeOpacity={0.5} backgroundDarker={"#3d7fba"}
@@ -120,7 +154,7 @@ export default function SelectScheduleScreen({ navigation }) {
                                     <CustomTextComponent
                                         text={"Book Appointment"} fs={16} fw={"normal"} textColor={"#fff"}
                                     />
-                                </AwesomeButton>
+                                </AwesomeButton> */}
                             </View>
                         </View>
                     }

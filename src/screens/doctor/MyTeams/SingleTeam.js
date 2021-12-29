@@ -8,11 +8,11 @@ import { GetTeams, AddTeam } from '../../../reduxV2/action/DoctorAction';
 import { ListingWithThumbnailLoader } from '../../../components/atoms/Loader/Loader';
 import LottieView from 'lottie-react-native';
 import TopNavBar from '../../../components/molecules/TopNavBar/TopNavBar';
-import {useSelector, useDispatch} from 'react-redux';
-import {Colors} from '../../../styles/colorsV2';
+import { useSelector, useDispatch } from 'react-redux';
+import { Colors } from '../../../styles/colorsV2';
 
 const Teams = ({ navigation, route }) => {
-	const {theme} = useSelector((state) => state.AuthReducer);
+	const { theme } = useSelector((state) => state.AuthReducer);
 	const { practise, _id } = route.params;
 	const [modalVisible, setVisible] = useState(false);
 	// const {
@@ -41,13 +41,13 @@ const Teams = ({ navigation, route }) => {
 	return (
 		<View style={{ flex: 1, backgroundColor: Colors.primary_background[theme], }}>
 			<StatusBar
-        animated
-        backgroundColor={Colors.secondary_background[theme]}
-        barStyle={theme === 'DARK' ? 'light-content' : 'dark-content'}
-      />
+				animated
+				backgroundColor={Colors.secondary_background[theme]}
+				barStyle={theme === 'DARK' ? 'light-content' : 'dark-content'}
+			/>
 			<TopNavBar
 				navigation={navigation}
-				onLeftButtonPress={() => { navigation.navigate('Teams')}}
+				onLeftButtonPress={() => { navigation.navigate('Teams') }}
 				headerText={'Team Members'}>
 			</TopNavBar>
 			<ScrollView

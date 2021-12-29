@@ -54,7 +54,7 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
                         }}
                     />
                     <CustomTextComponent
-                        text={`Location: ${location}`} fs={13} fw={"300"} textColor={Colors.BLACK}
+                        text={`Location: ${location}`} fs={13} fw={"600"} textColor={Colors.BLACK}
                     />
                 </View>
 
@@ -67,10 +67,27 @@ export const BuildIntroductionComponent = ({ image, isOnline, name, info, locati
                         }}
                     />
                     <CustomTextComponent
-                        text={"Available Time: "} fs={13} fw={"300"} textColor={Colors.BLACK}
+                        text={"Available Time: "} fs={13} fw={"600"} textColor={Colors.BLACK}
                     />
                     <CustomTextComponent
-                        text={time} fs={13} fw={"300"} textColor={"#51B7B7"}
+                        text={time} fs={13} fw={"600"} textColor={Colors.BLUE2}
+                    // "#51B7B7"
+                    />
+                </View>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 6 }}>
+                    <Image
+                        source={require('../../assets/clock.png')}
+                        style={{
+                            width: 13, height: 13, tintColor: "transparent",
+                            marginRight: 8,
+                        }}
+                    />
+                    <CustomTextComponent
+                        text={"From "} fs={12} fw={"600"} textColor={Colors.BLACK}
+                    />
+                    <CustomTextComponent
+                        text={"₹ 700"} fs={12} fw={"600"} textColor={Colors.BLUE2}
+                    // "#51B7B7"
                     />
                 </View>
             </View>

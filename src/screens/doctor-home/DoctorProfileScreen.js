@@ -10,6 +10,7 @@ import DoctorHeader from '../../components/DoctorHeader';
 import { OverviewTabComponent, OverviewTabEducation, OverviewTabExperience } from './profile_component/OverviewTabComponent';
 import AvailibilityTabComponent from './profile_component/AvailibilityTabComponent';
 import { PatientReviewCardComponent, PatientReviewsTitleComponent } from './profile_component/PatientReviewsTabComponent';
+import DmzButton from '../../components/atoms/SwitchButton/SwitchButton';
 
 export default function DoctorProfileScreen() {
 
@@ -295,7 +296,22 @@ export default function DoctorProfileScreen() {
 
 
             <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
-                <AwesomeButton
+                <DmzButton
+                    text="Book Appointment"
+                    style={{
+                        Container: {
+                            width: '50%',
+                            alignSelf: 'center',
+                            backgroundColor: Colors.BLUE2,
+                            borderRadius: 30,
+                        },
+                        Text: {
+                            fontSize: 16,
+                            color: '#fff',
+                        },
+                    }}
+                />
+                {/* <AwesomeButton
                     width={240} height={52} backgroundShadow={"#368edd"}
                     backgroundColor={Colors.BLUE2} borderRadius={100}
                     activeOpacity={0.5} backgroundDarker={"#3d7fba"}
@@ -304,7 +320,7 @@ export default function DoctorProfileScreen() {
                     <CustomTextComponent
                         text={"Book Appointment"} fs={16} fw={"normal"} textColor={"#fff"}
                     />
-                </AwesomeButton>
+                </AwesomeButton> */}
             </View>
             <View style={{ height: 60 }} />
         </ScrollView>

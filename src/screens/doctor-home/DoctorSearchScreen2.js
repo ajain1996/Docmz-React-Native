@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, SafeAreaView, FlatList, StatusBar, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
+import DmzButton from '../../components/atoms/SwitchButton/SwitchButton';
 import CustomButton from '../../components/CustomButton';
 import CustomTextComponent from '../../components/CustomTextComponent';
 import HeaderComponent from '../../components/HeaderComponent';
@@ -50,7 +51,23 @@ export default function DoctorSearchScreen2({ navigation }) {
                                     fs={18} textColor={"#000"}
                                 />
                                 <View style={{ height: 16 }} />
-                                <CustomButton
+                                <DmzButton
+                                    text="Call Now"
+                                    style={{
+                                        Container: {
+                                            width: 150, height: 40,
+                                            alignSelf: 'center',
+                                            backgroundColor: Colors.GREEN,
+                                            borderRadius: 30,
+                                        },
+                                        Text: {
+                                            fontSize: 15,
+                                            color: '#fff',
+                                        },
+                                    }}
+                                    onPress={() => { navigation.navigate("DoctorProfileScreen") }}
+                                />
+                                {/* <CustomButton
                                     text="Call Now" fs={15}
                                     textColor={"white"}
                                     width={150} height={40}
@@ -61,7 +78,7 @@ export default function DoctorSearchScreen2({ navigation }) {
                                     icon={require("../../../assets/call.png")}
                                     tintColor="#fff" marginTop={5}
                                     onPress={() => { }}
-                                />
+                                /> */}
                             </View>
                         </Card>
                     }

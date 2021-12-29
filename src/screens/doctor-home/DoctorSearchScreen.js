@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, SafeAreaView, FlatList, StatusBar, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
+import DmzButton from '../../components/atoms/DmzButton/DmzButton';
 import CustomButton from '../../components/CustomButton';
 import CustomTextComponent from '../../components/CustomTextComponent';
 import HeaderComponent from '../../components/HeaderComponent';
@@ -161,7 +162,24 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
                     fs={20} fw="700" textColor={"#000"}
                 />
 
-                <CustomButton
+                <DmzButton
+                    text="Call Now"
+                    style={{
+                        Container: {
+                            width: cardFooter ? 90 : 76, height: cardFooter ? 30 : 30,
+                            alignSelf: 'center',
+                            backgroundColor: Colors.GREEN,
+                            borderRadius: 30,
+                        },
+                        Text: {
+                            fontSize: 12,
+                            color: '#fff',
+                        },
+                    }}
+                    onPress={() => { navigation.navigate("ScheduleHomeScreen") }}
+                />
+
+                {/* <CustomButton
                     text="Book" fs={12}
                     textColor={"white"}
                     width={cardFooter ? 90 : 65} height={cardFooter ? 30 : 26}
@@ -169,8 +187,8 @@ export const BuildDoctorDetailsComponent = ({ item, cardFooter, navigation }) =>
                     bgColor={Colors.BLUE2}
                     shadowColor={"#368edd"}
                     backgroundDarker="#3d7fba"
-                    onPress={() => { navigation.navigate("ScheduleHomeScreen") }}
-                />
+                    onPress={() => { navigation.navigate("") }}
+                /> */}
             </View>
         );
     }

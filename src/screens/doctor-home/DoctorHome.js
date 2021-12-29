@@ -9,6 +9,7 @@ import CustomTextComponent from '../../components/CustomTextComponent';
 import AwesomeButton from "react-native-really-awesome-button";
 import DoctorSearch from './DoctorSearch';
 import DoctorHeader from '../../components/DoctorHeader';
+import DmzButton from '../../components/atoms/SwitchButton/SwitchButton';
 
 export default function DoctorHome() {
     const navigation = useNavigation();
@@ -37,7 +38,24 @@ export default function DoctorHome() {
                     }
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <AwesomeButton width={windowWidth - 10} height={58}
+                    {/* <DmzButton
+                        text="Book Appointment"
+                        style={{
+                            Container: {
+                                width: '95%',
+                                alignSelf: 'center',
+                                backgroundColor: Colors.ORANGE,
+                                borderRadius: 2,
+                                height: 54
+                            },
+                            Text: {
+                                fontSize: 16,
+                                color: '#fff',
+                                fontWeight: 'normal'
+                            },
+                        }}
+                    /> */}
+                    {/* <AwesomeButton width={windowWidth - 10} height={58}
                         backgroundColor={"#EFA860"} justifyContent='center' alignItems='center'
                         backgroundShadow={"#fff"} activeOpacity={0.5} backgroundDarker="#fff"
                         onPress={() => { navigation.navigate("DoctorProfileScreen") }}
@@ -45,7 +63,7 @@ export default function DoctorHome() {
                         <Text style={{ fontSize: 18, color: 'white', fontFamily: 'Montserrat-Regular', }}>
                             Book Appointment
                         </Text>
-                    </AwesomeButton>
+                    </AwesomeButton> */}
                 </View>
                 <View style={{ height: 64 }} />
             </ScrollView>
@@ -86,18 +104,21 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                 </View>
                 <View style={{ flexDirection: 'column', width: windowWidth - 148 }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <CustomTextComponent
-                            text={drName} fs={16} fw={"bold"} textColor={Colors.BLACK}
-                        />
+                        <View style={{ width: '68%' }}>
+                            <CustomTextComponent
+                                text={drName} fs={16} fw={"bold"} textColor={Colors.BLACK}
+                            />
+                        </View>
                         <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
                             <Image
                                 source={require("../../../assets/star.png")}
                                 style={{ width: 20, height: 20 }}
                             />
+                            <View style={{ width: 8 }} />
                             <CustomTextComponent
                                 text={rating} fs={16} fw={"bold"} textColor={Colors.BLACK}
                             />
-                            <View style={{ width: 12 }} />
+                            <View style={{ width: 8 }} />
                             <Image
                                 source={require("../../../assets/heart.png")}
                                 style={{ width: 22, height: 22, tintColor: Colors.SILVER }}
@@ -110,26 +131,34 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                     <View style={{ height: 8 }} />
 
                     <View style={{ flexDirection: 'row', marginVertical: 4 }}>
-                        <BuildCardButtonComponent
-                            image={require("../../../assets/user.png")}
-                            text={"8 Years"}
-                        />
-                        <View style={{ width: 8 }} />
-                        <BuildCardButtonComponent
-                            image={require("../../../assets/location.png")}
-                            text={"Ahmedabad, IN"}
-                        />
+                        <View style={{ width: '50%' }}>
+                            <BuildCardButtonComponent
+                                image={require("../../../assets/location.png")}
+                                text={"Ahmedabad, IN"}
+                            />
+                        </View>
+                        <View style={{ width: 6 }} />
+                        <View style={{ width: '28%' }}>
+                            <BuildCardButtonComponent
+                                image={require("../../../assets/user.png")}
+                                text={"8 Years"}
+                            />
+                        </View>
                     </View>
                     <View style={{ height: 8 }} />
 
                     <View style={{ flexDirection: 'row', marginVertical: 4 }}>
-                        <BuildDoctorAvailibility
-                            text="Available in 48  min"
-                        />
-                        <View style={{ width: 8 }} />
-                        <BuildDoctorAvailibility
-                            text="Treated 800+ patients"
-                        />
+                        <View style={{ width: '47%' }}>
+                            <BuildDoctorAvailibility
+                                text="Available in 48  min"
+                            />
+                        </View>
+                        <View style={{ width: 6 }} />
+                        <View style={{ width: '52%' }}>
+                            <BuildDoctorAvailibility
+                                text="Treated 800+ patients"
+                            />
+                        </View>
                     </View>
                     {/* <View style={{ height: 8 }} /> */}
 
@@ -165,16 +194,34 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
                     text="₹ 700" fs={22} fw="600"
                     textColor={"black"}
                 />
-                <AwesomeButton width={180} height={48} borderRadius={100} backgroundColor={Colors.BLUE2}
-                    backgroundShadow={"#368edd"} activeOpacity={0.5} backgroundDarker={"#3d7fba"}
+                <DmzButton
+                    text="Book Appointment"
+                    style={{
+                        Container: {
+                            width: '50%',
+                            alignSelf: 'center',
+                            backgroundColor: Colors.BLUE2,
+                            borderRadius: 30,
+                            height: 42,
+                        },
+                        Text: {
+                            fontSize: 16,
+                            color: '#fff',
+                            fontWeight: 'normal'
+                        },
+                    }}
                     onPress={() => { navigation.navigate("DoctorProfileScreen") }}
+                />
+                {/* <AwesomeButton width={180} height={48} borderRadius={100} backgroundColor={Colors.BLUE2}
+                    backgroundShadow={"#368edd"} activeOpacity={0.5} backgroundDarker={"#3d7fba"}
+                    onPress={() => {  }}
                 >
                     <Text style={{
                         fontSize: 15, color: 'white', marginLeft: 4, fontFamily: 'Montserrat-Regular',
                     }}>
                         Book Appointment
                     </Text>
-                </AwesomeButton>
+                </AwesomeButton> */}
             </View>
         </Card>
     );
@@ -182,7 +229,7 @@ const BuildCustomCardComponent = ({ navigation, drName, drInfo, desc, rating, im
 
 const BuildDoctorAvailibility = ({ text }) => {
     return (
-        <View style={{ paddingHorizontal: 6, paddingVertical: 6, backgroundColor: '#EEEEEE', borderRadius: 4 }}>
+        <View style={{ paddingHorizontal: 6, paddingVertical: 6, backgroundColor: '#f7f8f9', borderRadius: 6 }}>
             <Text style={{ fontSize: 11, fontFamily: 'Montserrat-Regular', fontWeight: '800' }}>{text}</Text>
         </View>
     );
@@ -198,16 +245,8 @@ const styles = StyleSheet.create({
     },
     button_shadow: {
         flexDirection: 'row',
-        // shadowColor: "#999999",
-        // shadowOpacity: 0.1,
-        // shadowRadius: 2,
-        // shadowOffset: {
-        //     height: 2,
-        //     width: 0
-        // },
-        // elevation: 4,
-        borderRadius: 4,
-        backgroundColor: '#EEEEEE',
+        borderRadius: 6,
+        backgroundColor: '#f7f8f9',
         paddingHorizontal: 6,
         paddingVertical: 5,
         alignItems: 'center',
